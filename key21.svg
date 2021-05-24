@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<svg
+    width="64"
+    height="128"
+    viewBox="0 0 64 128"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <rect class="bottom" fill="#e0e0e0" width="64" height="128" rx="5" />
+    <rect
+        class="top"
+        fill="#f8f8f8"
+        width="48"
+        height="112"
+        rx="5"
+        x="8"
+        y="6"
+    />
+</svg>
