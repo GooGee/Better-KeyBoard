@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KeyBoard</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="data.js"></script>
+        <script src="index.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div id="board">
+                <div v-for="row in board.rowxx" class="row">
+                    <span
+                        v-for="key in row.keyxx"
+                        :style="key.style(row)"
+                        :class="key.css(row)"
+                        class="key"
+                    >
+                        <span class="slot">
+                            <span class="key-label">{{ key.label }}</span>
+                            <span class="key-down">{{ key.down }}</span>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            Vue.createApp({
+                data() {
+                    board.load(data)
+                    return {
+                        board,
+                    }
+                },
+            }).mount("#app")
+        </script>
+    </body>
+</html>
