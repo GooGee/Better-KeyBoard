@@ -1,0 +1,52 @@
+#board {
+    width: 896px;
+    height: 480px;
+    padding: 11px;
+    display: inline-block;
+    background-color: #e0e0e0;
+}
+
+.image11 {
+    background-image: url("key11.svg");
+}
+
+.image12 {
+    background-image: url("key12.svg");
+}
+
+.image14 {
+    background-image: url("key14.svg");
+}
+
+.image21 {
+    background-image: url("key21.svg");
+}
+
+.key {
+    position: absolute;
+    background-size: cover;
+    display: inline-block;
+}
+
+.key-label {
+    position: absolute;
+    left: 15px;
+    top: 11px;
+}
+
+.key-down {
+    position: absolute;
+    left: 15px;
+    top: 32px;
+}
+
+.row {
+    position: relative;
+}
+
+.slot {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+}
