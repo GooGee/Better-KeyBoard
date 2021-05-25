@@ -31,7 +31,12 @@ class Key {
      * @param {Row} row
      */
     css(Row) {
-        return `image${this.height}${this.width}`
+        const list = []
+        list.push(`image${this.height}${this.width}`)
+        if (this.method) {
+            list.push("fn")
+        }
+        return list.join(" ")
     }
 
     /**
