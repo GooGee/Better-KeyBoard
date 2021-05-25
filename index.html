@@ -11,15 +11,30 @@
     </head>
     <body>
         <div id="app">
+            <h1>KeyBoard</h1>
+            <div>
+                Layer
+                <span
+                    v-for="(layer,index) in layerxx"
+                    @click="show(index)"
+                    :class="{active:index===this.index}"
+                    class="button"
+                >
+                    {{ index }}
+                </span>
+            </div>
+            <br />
             <div id="board">
                 <div v-for="row in board.rowxx" class="row">
                     <span
                         v-for="key in row.keyxx"
+                        @mousedown="press(key)"
+                        @mouseup="lift(key)"
                         :style="key.style(row)"
                         :class="key.css(row)"
                         class="key"
                     >
-                        <span class="slot">
+                        <span :class="{fn:key.method}" class="slot">
                             <span class="key-label">{{ key.label }}</span>
                             <span class="key-down">{{ key.down }}</span>
                         </span>
@@ -31,10 +46,38 @@
         <script>
             Vue.createApp({
                 data() {
-                    board.load(data)
                     return {
-                        board,
+                        board: new Board(),
+                        index: 0,
+                        key: null,
+                        layerxx: data.layerxx,
                     }
+                },
+                mounted() {
+                    this.show(0)
+                },
+                methods: {
+                    lift(key) {
+                        if (this.key) {
+                            if (this.key.method.localeCompare("MO") === 0) {
+                                this.show(0)
+                            }
+                            this.key = null
+                        }
+                        if (key.method.localeCompare("TG") === 0) {
+                            this.show(key.layer)
+                        }
+                    },
+                    press(key) {
+                        this.key = key
+                        if (key.method.localeCompare("MO") === 0) {
+                            this.show(key.layer)
+                        }
+                    },
+                    show(index) {
+                        this.index = index
+                        this.board.load(this.layerxx[index].board)
+                    },
                 },
             }).mount("#app")
         </script>
