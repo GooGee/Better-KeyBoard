@@ -1,4 +1,13 @@
 class Key {
+    /**
+     *
+     * @param {string} label
+     * @param {string} down
+     * @param {number} width
+     * @param {number} height
+     * @param {number} x
+     * @param {number} y
+     */
     constructor(label, down = "", width = 1, height = 1, x = 0, y = 0) {
         this.top = label
         this.down = down
@@ -6,6 +15,15 @@ class Key {
         this.height = height
         this.x = x
         this.y = y
+
+        const list = label.match(/^([a-zA-Z]+)\((\d)\)$/)
+        if (list === null) {
+            this.method = ""
+            this.layer = 0
+        } else {
+            this.method = list[1]
+            this.layer = parseInt(list[2])
+        }
     }
 
     /**
@@ -119,5 +137,3 @@ class Board {
         })
     }
 }
-
-const board = new Board()
