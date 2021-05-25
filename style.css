@@ -1,3 +1,8 @@
+#app {
+    width: 922px;
+    margin: auto;
+}
+
 #board {
     width: 896px;
     height: 480px;
@@ -43,6 +48,10 @@
     background-image: url("key21.svg");
 }
 
+.inline {
+    display: inline-block;
+}
+
 .key {
     position: absolute;
     background-size: cover;
@@ -59,6 +68,10 @@
     position: absolute;
     left: 15px;
     top: 32px;
+}
+
+.mr33 {
+    margin-right: 33px;
 }
 
 .row {

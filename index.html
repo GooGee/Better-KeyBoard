@@ -11,9 +11,9 @@
     </head>
     <body>
         <div id="app">
-            <h1>KeyBoard</h1>
             <div>
-                Layer
+                <h1 class="inline mr33">KeyBoard</h1>
+                <span>Layer</span>
                 <span
                     v-for="(layer,index) in layerxx"
                     @click="show(index)"
@@ -23,7 +23,6 @@
                     {{ index }}
                 </span>
             </div>
-            <br />
             <div id="board">
                 <div v-for="row in board.rowxx" class="row">
                     <span
