@@ -1,22 +1,22 @@
 class Key {
     /**
      *
-     * @param {string} label
-     * @param {string} down
+     * @param {string} text
      * @param {number} width
      * @param {number} height
      * @param {number} x
      * @param {number} y
      */
-    constructor(label, down = "", width = 1, height = 1, x = 0, y = 0) {
-        this.top = label
-        this.down = down
+    constructor(text, width = 1, height = 1, x = 0, y = 0) {
+        const wordxx = text.split("\n")
+        this.top = wordxx[0]
+        this.down = wordxx[1] ?? ""
         this.width = width
         this.height = height
         this.x = x
         this.y = y
 
-        const list = label.match(/^([a-zA-Z]+)\((\d)\)$/)
+        const list = this.top.match(/^([a-zA-Z]+)\((\d)\)$/)
         if (list === null) {
             this.method = ""
             this.layer = 0
@@ -104,8 +104,7 @@ class Row {
                 return
             }
 
-            const wordxx = item.split("\n")
-            const key = new Key(wordxx[0], wordxx[1], 1, 1, index, this.index)
+            const key = new Key(item, 1, 1, index, this.index)
             this.keyxx.push(key)
             if (last) {
                 key.x += width
