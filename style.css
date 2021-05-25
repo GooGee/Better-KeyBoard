@@ -6,6 +6,26 @@
     background-color: #e0e0e0;
 }
 
+.button {
+    margin: 3px;
+    padding: 11px 22px;
+    cursor: pointer;
+    border: solid 1px dodgerblue;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: lightskyblue;
+}
+
+.button.active {
+    background-color: lightskyblue;
+}
+
+.fn {
+    color: dodgerblue;
+}
+
 .image11 {
     background-image: url("key11.svg");
 }
