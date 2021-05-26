@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<svg
+    width="328"
+    height="328"
+    viewBox="0 0 328 328"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <path
+        fill="orange"
+        fill-opacity="25%"
+        stroke="orange"
+        stroke-width="8"
+        transform="translate(4,4)"
+        d="
+            M 0,320
+            l 0,-224
+            a 1,1 0 1 1 64,0
+            l 0,128
+            l 0,-160
+            a 1,1 0 1 1 64,0
+            l 0,128
+            l 0,-160
+            a 1,1 0 1 1 64,0
+            l 0,160
+            l 0,-128
+            a 1,1 0 1 1 64,0
+            l 0,192
+            l 0,-64
+            a 1,1 0 1 1 64,0
+            l 0,128
+            z
+        "
+    ></path>
+</svg>
