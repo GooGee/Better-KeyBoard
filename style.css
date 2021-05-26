@@ -7,6 +7,7 @@
     width: 896px;
     height: 480px;
     padding: 11px;
+    position: relative;
     display: inline-block;
     background-color: #e0e0e0;
 }
@@ -30,6 +31,21 @@
 .fn {
     color: dodgerblue;
     cursor: pointer;
+}
+
+.hand {
+    position: absolute;
+    width: 300px;
+    top: 200px;
+}
+
+.hand.left {
+    left: 82px;
+}
+
+.hand.right {
+    left: 536px;
+    transform: scale(-1, 1);
 }
 
 .image11 {

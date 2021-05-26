@@ -13,7 +13,8 @@
         <div id="app">
             <div>
                 <h1 class="inline mr33">KeyBoard</h1>
-                <span>Layer</span>
+
+                <span>Layer: </span>
                 <span
                     v-for="(layer,index) in layerxx"
                     @click="show(index)"
@@ -22,6 +23,25 @@
                 >
                     {{ index }}
                 </span>
+
+                <span class="mr33"></span>
+                <span>Hand: </span>
+                <label>
+                    <input
+                        v-model="hand"
+                        :value="true"
+                        type="radio"
+                        name="hand"
+                    />Show
+                </label>
+                <label>
+                    <input
+                        v-model="hand"
+                        :value="false"
+                        type="radio"
+                        name="hand"
+                    />Hide
+                </label>
             </div>
             <div id="board">
                 <div v-for="row in board.rowxx" class="row">
@@ -39,6 +59,18 @@
                         </span>
                     </span>
                 </div>
+                <img
+                    v-show="hand"
+                    src="hand.svg"
+                    class="hand left"
+                    alt="left hand"
+                />
+                <img
+                    v-show="hand"
+                    src="hand.svg"
+                    class="hand right"
+                    alt="right hand"
+                />
             </div>
         </div>
 
@@ -47,6 +79,7 @@
                 data() {
                     return {
                         board: new Board(),
+                        hand: true,
                         index: 0,
                         key: null,
                         layerxx: data.layerxx,
