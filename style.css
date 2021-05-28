@@ -73,7 +73,6 @@
     position: absolute;
     background-size: cover;
     display: inline-block;
-    background-color: #111;
 }
 
 .key-label {
@@ -94,11 +93,4 @@
 
 .row {
     position: relative;
-}
-
-.slot {
-    position: relative;
-    width: 64px;
-    height: 64px;
-    display: inline-block;
 }

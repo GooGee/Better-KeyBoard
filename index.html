@@ -45,15 +45,14 @@
             </div>
             <div id="board">
                 <div v-for="row in board.rowxx" class="row">
-                    <span
-                        v-for="key in row.keyxx"
-                        @mousedown="press(key)"
-                        @mouseup="lift(key)"
-                        :style="key.style(row)"
-                        :class="key.css(row)"
-                        class="key"
-                    >
-                        <span class="slot">
+                    <span v-for="key in row.keyxx" class="slot">
+                        <span
+                            @mousedown="press(key)"
+                            @mouseup="lift(key)"
+                            :style="key.style(row)"
+                            :class="key.css(row)"
+                            class="key"
+                        >
                             <span class="key-label">{{ key.label }}</span>
                             <span class="key-down">{{ key.down }}</span>
                         </span>
