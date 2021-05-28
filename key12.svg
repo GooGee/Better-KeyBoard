@@ -6,14 +6,17 @@
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
 >
-    <rect class="bottom" fill="#e0e0e0" width="128" height="64" rx="5" />
+    <rect fill="#111" width="128" height="64" rx="5" />
+    <rect fill="#aaa" width="126" height="62" rx="5" x="1" y="1" />
+    <rect fill="#ccc" width="124" height="60" rx="5" x="2" y="2" />
     <rect
-        class="top"
-        fill="#f8f8f8"
+        fill="#fff"
         width="112"
         height="48"
         rx="5"
         x="8"
         y="6"
+        stroke="#ccc"
+        stroke-width="1"
     />
 </svg>

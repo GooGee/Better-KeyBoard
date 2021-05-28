@@ -9,7 +9,8 @@
     padding: 11px;
     position: relative;
     display: inline-block;
-    background-color: #e0e0e0;
+    border: solid 1px black;
+    border-radius: 11px;
 }
 
 .button {
@@ -72,6 +73,7 @@
     position: absolute;
     background-size: cover;
     display: inline-block;
+    background-color: #111;
 }
 
 .key-label {
