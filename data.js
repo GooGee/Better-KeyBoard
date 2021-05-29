@@ -132,14 +132,17 @@ const data = {
                     {
                         x: 3,
                         w: 2,
+                        style: "plain",
                     },
                     "Ctrl",
                     {
                         w: 4,
+                        style: "plain",
                     },
                     "MO(1)",
                     {
                         w: 2,
+                        style: "plain",
                     },
                     "RCtrl",
                 ],
@@ -277,14 +280,17 @@ const data = {
                     {
                         x: 3,
                         w: 2,
+                        style: "plain",
                     },
                     "TG(2)",
                     {
                         w: 4,
+                        style: "plain",
                     },
                     "",
                     {
                         w: 2,
+                        style: "plain",
                     },
                     "TG(2)",
                 ],
@@ -422,14 +428,17 @@ const data = {
                     {
                         x: 3,
                         w: 2,
+                        style: "plain",
                     },
                     "",
                     {
                         w: 4,
+                        style: "plain",
                     },
                     "",
                     {
                         w: 2,
+                        style: "plain",
                     },
                     "",
                 ],
@@ -567,14 +576,17 @@ const data = {
                     {
                         x: 3,
                         w: 2,
+                        style: "plain",
                     },
                     "",
                     {
                         w: 4,
+                        style: "plain",
                     },
                     "",
                     {
                         w: 2,
+                        style: "plain",
                     },
                     "",
                 ],

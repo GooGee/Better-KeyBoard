@@ -87,6 +87,10 @@
     top: 32px;
 }
 
+.key.plain {
+    border: solid 1px black;
+}
+
 .mr33 {
     margin-right: 33px;
 }

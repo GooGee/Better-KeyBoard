@@ -16,6 +16,8 @@ class Key {
         this.x = x
         this.y = y
 
+        this._style = ""
+
         const list = this.top.match(/^([a-zA-Z]+)\((\d)\)$/)
         if (list === null) {
             this.method = ""
@@ -32,7 +34,11 @@ class Key {
      */
     css(Row) {
         const list = []
-        list.push(`image${this.height}${this.width}`)
+        if (this._style) {
+            list.push(this._style)
+        } else {
+            list.push(`image${this.height}${this.width}`)
+        }
         if (this.method) {
             list.push("fn")
         }
@@ -69,6 +75,9 @@ class Key {
         }
         if (data.h) {
             this.height = data.h
+        }
+        if (data.style) {
+            this._style = data.style
         }
     }
 
@@ -130,6 +139,7 @@ class Board {
      */
     load(data) {
         let index = 0
+        this.rowxx = []
         data.forEach((list) => {
             if (list[0].y) {
                 index += list[0].y
