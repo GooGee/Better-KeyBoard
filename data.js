@@ -34,10 +34,12 @@ const data = {
                     "%\n5",
                     {
                         h: 2,
+                        changed: true,
                     },
                     "Back\nSpace",
                     {
                         h: 2,
+                        changed: true,
                     },
                     "Delete",
                     "^\n6",
@@ -62,6 +64,9 @@ const data = {
                     "I",
                     "O",
                     "P",
+                    {
+                        changed: true,
+                    },
                     "+\n=",
                 ],
                 [
@@ -73,10 +78,12 @@ const data = {
                     "G",
                     {
                         h: 2,
+                        changed: true,
                     },
                     "Esc",
                     {
                         h: 2,
+                        changed: true,
                     },
                     "Enter",
                     "H",
@@ -132,16 +139,19 @@ const data = {
                     {
                         x: 3,
                         w: 2,
+                        changed: true,
                         style: "plain",
                     },
                     "Ctrl",
                     {
                         w: 4,
+                        changed: true,
                         style: "plain",
                     },
                     "MO(1)",
                     {
                         w: 2,
+                        changed: true,
                         style: "plain",
                     },
                     "RCtrl",

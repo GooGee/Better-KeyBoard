@@ -75,6 +75,10 @@
     display: inline-block;
 }
 
+.key.changed {
+    color: red;
+}
+
 .key-label {
     position: absolute;
     left: 15px;

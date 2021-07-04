@@ -15,6 +15,7 @@ class Key {
         this.height = height
         this.x = x
         this.y = y
+        this.changed = false
 
         this._style = ""
 
@@ -32,7 +33,7 @@ class Key {
      *
      * @param {Row} row
      */
-    css(Row) {
+    css(Row, showChange) {
         const list = []
         if (this._style) {
             list.push(this._style)
@@ -41,6 +42,11 @@ class Key {
         }
         if (this.method) {
             list.push("fn")
+        }
+        if (showChange) {
+            if (this.changed) {
+                list.push("changed")
+            }
         }
         return list.join(" ")
     }
@@ -78,6 +84,9 @@ class Key {
         }
         if (data.style) {
             this._style = data.style
+        }
+        if (data.changed) {
+            this.changed = data.changed
         }
     }
 

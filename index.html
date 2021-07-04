@@ -42,6 +42,25 @@
                         name="hand"
                     />Hide
                 </label>
+
+                <span class="mr33"></span>
+                <span>Change: </span>
+                <label>
+                    <input
+                        v-model="change"
+                        :value="true"
+                        type="radio"
+                        name="change"
+                    />Show
+                </label>
+                <label>
+                    <input
+                        v-model="change"
+                        :value="false"
+                        type="radio"
+                        name="change"
+                    />Hide
+                </label>
             </div>
             <div id="board">
                 <div v-for="row in board.rowxx" class="row">
@@ -50,7 +69,7 @@
                             @mousedown="press(key)"
                             @mouseup="lift(key)"
                             :style="key.style(row)"
-                            :class="key.css(row)"
+                            :class="key.css(row, change)"
                             class="key"
                         >
                             <span class="key-label">{{ key.label }}</span>
@@ -78,6 +97,7 @@
                 data() {
                     return {
                         board: new Board(),
+                        change: true,
                         hand: true,
                         index: 0,
                         key: null,
