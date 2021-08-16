@@ -6,7 +6,7 @@
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
 >
-    <rect fill="#111" width="64" height="64" rx="5" />
+    <rect fill="#333" width="64" height="64" rx="5" />
     <rect fill="#aaa" width="62" height="62" rx="5" x="1" y="1" />
     <rect fill="#ccc" width="60" height="60" rx="5" x="2" y="2" />
     <rect
