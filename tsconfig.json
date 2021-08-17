@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "lib": [
+            "DOM",
+            "es2015"
+        ],
+        "outFile": "./build/index.js",
+        "strict": true,
+        "target": "es2015",
+    },
+    "include": [
+        "code/**/*"
+    ]
+}
