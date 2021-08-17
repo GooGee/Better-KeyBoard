@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Finger Movement</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous"
+        />
+        <script src="build/index.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <div id="app" class="container">
+            <table class="table">
+                <caption style="caption-side: top">
+                    <h2>Finger Movement</h2>
+                </caption>
+                <tbody>
+                    <tr>
+                        <td class="text-right">uri</td>
+                        <td>
+                            <div class="input-group">
+                                <input
+                                    v-model="uri"
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="file uri"
+                                />
+                                <div class="input-group-append">
+                                    <button
+                                        @click="fetch"
+                                        class="btn btn-outline-secondary"
+                                        type="button"
+                                    >
+                                        fetch
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">code</td>
+                        <td>
+                            <textarea
+                                v-model="text"
+                                class="form-control"
+                                cols="30"
+                                rows="5"
+                                spellcheck="false"
+                            ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">ignore</td>
+                        <td>"\r", "\t", ")", "]", "}", ">"</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right"></td>
+                        <td>
+                            <button
+                                @click="run"
+                                class="btn btn-outline-primary"
+                            >
+                                statistic
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table v-if="output" class="table">
+                <thead>
+                    <tr>
+                        <th>{{text.length}} characters</th>
+                        <th>{{output.result1.data.name}}</th>
+                        <th>{{output.result2.data.name}}</th>
+                        <th>change</th>
+                        <th>percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="row in output.rowxx">
+                        <td v-html="row.label"></td>
+                        <td>{{row.value1}}</td>
+                        <td>{{row.value2}}</td>
+                        <td>{{row.value3}}</td>
+                        <td>{{row.value4}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            Vue.createApp({
+                data() {
+                    return {
+                        uri: "https://raw.githubusercontent.com/microsoft/vscode/main/src/main.js",
+                        text: "",
+                        layout61: null,
+                        layout72: null,
+                        appendxx: [
+                            // append a 'Ctrl' every 55 characters
+                            { text: "LCtrl", every: 55 },
+                            // append a 'Alt' every 111 characters
+                            { text: "LAlt", every: 111 },
+                        ],
+                        // auto complete
+                        ignorexx: ["\r", "\t", ")", "]", "}", ">"],
+                        output: null,
+                    }
+                },
+                created() {
+                    fetch("static/layout61.json")
+                        .then((response) => response.json())
+                        .then((value) => (this.layout61 = value))
+                        .catch((reason) => alert(reason))
+                    fetch("static/layout72.json")
+                        .then((response) => response.json())
+                        .then((value) => (this.layout72 = value))
+                        .catch((reason) => alert(reason))
+                },
+                mounted() {
+                    this.fetch()
+                },
+                methods: {
+                    fetch() {
+                        if (this.uri === "") {
+                            alert("Please input the uri!")
+                            return
+                        }
+                        fetch(this.uri)
+                            .then((response) => response.text())
+                            .then((value) => (this.text = value))
+                            .catch((reason) => alert(reason))
+                    },
+                    run() {
+                        if (this.text === "") {
+                            alert("Please input some code!")
+                            return
+                        }
+                        try {
+                            this.output = run(
+                                this.text,
+                                this.layout61,
+                                this.layout72,
+                                this.ignorexx,
+                                this.appendxx,
+                                []
+                            )
+                        } catch (error) {
+                            console.error(error)
+                            alert(error)
+                        }
+                    },
+                },
+            }).mount("#app")
+        </script>
+    </body>
+</html>
