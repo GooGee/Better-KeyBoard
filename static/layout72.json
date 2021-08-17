@@ -1,0 +1,44 @@
+{
+    "name": "KeyBoard 72 keys",
+    "row": 6,
+    "column": 14,
+    "fingerRow": 2,
+    "thumbRow": 5,
+    "leftIndexFingerColumn": 4,
+    "rightIndexFingerColumn": 9,
+    "layerxx": [
+{
+    "key": "",
+    "rowxx": [
+        ["`","1","2","3","4","5","Backspace","Delete","6","7","8","9","0","-"],
+        ["Tab","q","w","e","r","t","Backspace","Delete","y","u","i","o","p","="],
+        ["Caps Lock","a","s","d","f","g","Esc","Enter","h","j","k","l",";","'"],
+        ["LShift","z","x","c","v","b","Esc","Enter","n","m",",",".","/","RShift"],
+        ["","LWin","LWin","LAlt","LAlt"," "," "," "," ","RAlt","RAlt","RWin","RWin",""],
+        ["","","","LCtrl","LCtrl","MO(1)","MO(1)","MO(1)","MO(1)","RCtrl","RCtrl","","",""]
+    ]
+},
+{
+    "key": "LShift",
+    "rowxx": [
+        ["~","!","@","#","$","%","Backspace","Delete","^","&","*","(",")","_"],
+        ["Tab","Q","W","E","R","T","Backspace","Delete","Y","U","I","O","P","+"],
+        ["Caps Lock","A","S","D","F","G","Esc","Enter","H","J","K","L",":","\""],
+        ["LShift","Z","X","C","V","B","Esc","Enter","N","M","<",">","?","RShift"],
+        ["","LWin","LWin","LAlt","LAlt"," "," "," "," ","RAlt","RAlt","RWin","RWin",""],
+        ["","","","LCtrl","LCtrl","MO(1)","MO(1)","MO(1)","MO(1)","RCtrl","RCtrl","","",""]
+    ]
+},
+{
+    "key": "MO(1)",
+    "rowxx": [
+        ["`","1","2","3","4","5","Backspace","Delete","6","7","8","9","0","-"],
+        ["Tab","/","7","8","9","-","Backspace","Delete","Page Up","Home","↑","End","","|"],
+        ["Caps Lock","*","4","5","6","+","Esc","Enter","Page Down","←","↓","→","","\\"],
+        ["LShift","0","1","2","3",".","Esc","Enter","(",")","[","]","{","}"],
+        ["","LWin","LWin","LAlt","LAlt"," "," "," "," ","RAlt","RAlt","RWin","RWin",""],
+        ["","","","LCtrl","LCtrl","MO(1)","MO(1)","MO(1)","MO(1)","RCtrl","RCtrl","","",""]
+    ]
+}
+    ]
+}
