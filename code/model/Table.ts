@@ -3,6 +3,24 @@ class Table {
 
     constructor(readonly result1: Result, readonly result2: Result) {
         this.rowxx = []
+        this.rowxx.push(new Row("burden", "", "", "", ""))
+        const fingerxx = Array.from(result1.map.keys())
+        fingerxx.forEach((finger) => {
+            const label = Finger[finger] + " finger"
+            const stroke1 = result1.map.get(finger)!.stroke
+            const stroke2 = result2.map.get(finger)!.stroke
+            this.rowxx.push(
+                new Row(
+                    label,
+                    ((stroke1 / result1.totalStroke) * 100).toFixed(1) + " %",
+                    ((stroke2 / result2.totalStroke) * 100).toFixed(1) + " %",
+                    "",
+                    ""
+                )
+            )
+        })
+
+        this.rowxx.push(new Row("total", "", "", "", ""))
         this.rowxx.push(
             this.make(
                 "total " + LabelEnum.distance,
@@ -26,7 +44,7 @@ class Table {
             )
         )
 
-        Array.from(result1.map.keys()).forEach((finger) => {
+        fingerxx.forEach((finger) => {
             const label = Finger[finger] + " finger"
             // console.log(label)
             // console.log(result1.map.get(finger)!.letterSet)
