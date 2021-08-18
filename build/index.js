@@ -8,23 +8,31 @@ function compute(kb, text, ignoreSet, appendxx) {
     // console.log(kb)
     let layer = 0;
     const set = new Set();
-    const fm = getFingerMovementMap();
-    const map = getKeyDistanceMap(kb);
-    // console.log(map)
+    const fmm = getFingerMovementMap();
+    const kdm = getKeyDistanceMap(kb);
+    // console.log(kdm)
+    let last = "";
     for (let index = 0; index < text.length; index++) {
         const character = text[index];
         if (ignoreSet.has(character)) {
             continue;
         }
-        if (map.has(character)) {
-            const key = map.get(character);
-            const finger = fm.get(key.finger);
+        if (kdm.has(character)) {
+            const key = kdm.get(character);
+            const finger = fmm.get(key.finger);
+            if (character === last) {
+                if (character !== " ") {
+                    finger.stroke += 1;
+                }
+                continue;
+            }
+            last = character;
             if (key.layer !== layer) {
                 if (key.layer > 0) {
                     const text = kb.data.layerxx[key.layer].key;
-                    const kd = map.get(text);
+                    const kd = kdm.get(text);
                     if (kd) {
-                        const finger = fm.get(kd.finger);
+                        const finger = fmm.get(kd.finger);
                         if (finger) {
                             stroke(kd, finger);
                         }
@@ -39,17 +47,17 @@ function compute(kb, text, ignoreSet, appendxx) {
         }
     }
     appendxx.forEach((item) => {
-        if (map.has(item.text)) {
+        if (kdm.has(item.text)) {
             const amount = Math.floor(text.length / item.every);
-            const key = map.get(item.text);
-            const finger = fm.get(key.finger);
+            const key = kdm.get(item.text);
+            const finger = fmm.get(key.finger);
             append(key, finger, amount);
         }
         else {
             set.add(item.text);
         }
     });
-    return new Result(kb.data, fm, set);
+    return new Result(kb.data, fmm, set);
 }
 function getFingerMovementMap() {
     const map = new Map();
@@ -285,10 +293,19 @@ class Table {
         this.result1 = result1;
         this.result2 = result2;
         this.rowxx = [];
+        this.rowxx.push(new Row("burden", "", "", "", ""));
+        const fingerxx = Array.from(result1.map.keys());
+        fingerxx.forEach((finger) => {
+            const label = Finger[finger] + " finger";
+            const stroke1 = result1.map.get(finger).stroke;
+            const stroke2 = result2.map.get(finger).stroke;
+            this.rowxx.push(new Row(label, ((stroke1 / result1.totalStroke) * 100).toFixed(1) + " %", ((stroke2 / result2.totalStroke) * 100).toFixed(1) + " %", "", ""));
+        });
+        this.rowxx.push(new Row("total", "", "", "", ""));
         this.rowxx.push(this.make("total " + LabelEnum.distance, result1.totalDistance, result2.totalDistance, true));
         this.rowxx.push(this.make("total " + LabelEnum.stroke, result1.totalStroke, result2.totalStroke));
         this.rowxx.push(this.make("total " + LabelEnum.stroke2, result1.totalStroke2, result2.totalStroke2));
-        Array.from(result1.map.keys()).forEach((finger) => {
+        fingerxx.forEach((finger) => {
             const label = Finger[finger] + " finger";
             // console.log(label)
             // console.log(result1.map.get(finger)!.letterSet)
