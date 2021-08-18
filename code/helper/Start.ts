@@ -13,23 +13,31 @@ function compute(
     // console.log(kb)
     let layer = 0
     const set = new Set<string>()
-    const fm = getFingerMovementMap()
-    const map = getKeyDistanceMap(kb)
-    // console.log(map)
+    const fmm = getFingerMovementMap()
+    const kdm = getKeyDistanceMap(kb)
+    // console.log(kdm)
+    let last = ""
     for (let index = 0; index < text.length; index++) {
         const character = text[index]
         if (ignoreSet.has(character)) {
             continue
         }
-        if (map.has(character)) {
-            const key = map.get(character)!
-            const finger = fm.get(key.finger)!
+        if (kdm.has(character)) {
+            const key = kdm.get(character)!
+            const finger = fmm.get(key.finger)!
+            if (character === last) {
+                if (character !== " ") {
+                    finger.stroke += 1
+                }
+                continue
+            }
+            last = character
             if (key.layer !== layer) {
                 if (key.layer > 0) {
                     const text = kb.data.layerxx[key.layer].key
-                    const kd = map.get(text)
+                    const kd = kdm.get(text)
                     if (kd) {
-                        const finger = fm.get(kd.finger)
+                        const finger = fmm.get(kd.finger)
                         if (finger) {
                             stroke(kd, finger)
                         }
@@ -43,16 +51,16 @@ function compute(
         }
     }
     appendxx.forEach((item) => {
-        if (map.has(item.text)) {
+        if (kdm.has(item.text)) {
             const amount = Math.floor(text.length / item.every)
-            const key = map.get(item.text)!
-            const finger = fm.get(key.finger)!
+            const key = kdm.get(item.text)!
+            const finger = fmm.get(key.finger)!
             append(key, finger, amount)
         } else {
             set.add(item.text)
         }
     })
-    return new Result(kb.data, fm, set)
+    return new Result(kb.data, fmm, set)
 }
 
 function getFingerMovementMap() {
