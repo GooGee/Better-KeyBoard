@@ -1,19 +1,73 @@
 
 # Efficient-KeyBoard
 
-通过改变键盘布局来提升键入效率，减轻手指负担，同时降低错误键入的机率。
+通过改变键盘布局来提升键入效率，减轻手指负担，同时降低键入错误的机率。
 
 和标准键盘相比，键位变化很小，方便快速适应。
 
-[键盘布局预览](https://googee.github.io/Efficient-KeyBoard)
 
+## 效果
 
-## 效率
+- 小拇指负担减轻了 37.7 %
+- 小拇指移动距离减少了 59.3 %
+- 小拇指易错键入减少了 50.1 %
+- [数据来源](https://googee.github.io/Efficient-KeyBoard/statistic.html)
+- [键盘布局预览](https://googee.github.io/Efficient-KeyBoard)
 
 <table>
+    <caption>
+        <span>编程中各个手指负担（击键次数百分比）</span>
+    </caption>
     <thead>
         <tr>
-            <th><a href="https://googee.github.io/Efficient-KeyBoard/statistic.html">数据来源</a></th>
+            <th></th>
+            <th>普通键盘</th>
+            <th>72 键盘</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>大拇指</td>
+            <td>9.1 %</td>
+            <td>15.2 %</td>
+        </tr>
+        <tr>
+            <td>食指</td>
+            <td>29.3 %</td>
+            <td>33.7 %</td>
+        </tr>
+        <tr>
+            <td>中指</td>
+            <td>16.2 %</td>
+            <td>18.4 %</td>
+        </tr>
+        <tr>
+            <td>无名指</td>
+            <td>14.4 %</td>
+            <td>13.8 %</td>
+        </tr>
+        <tr>
+            <td>小拇指</td>
+            <td>31.0 %</td>
+            <td>19.0 %</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+使用普通键盘，<br>
+小拇指负担最重，负担了 31.0% 的键入；<br>
+大拇指最轻松，仅负担了 9.1 % 的键入。
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <caption>
+        <span>小拇指击键次数和移动距离</span>
+    </caption>
+    <thead>
+        <tr>
+            <th></th>
             <th>普通键盘</th>
             <th>72 键盘</th>
             <th>变化量</th>
@@ -23,40 +77,42 @@
     <tbody>
         <tr>
             <td>小拇指移动距离</td>
-            <td>6991.8</td>
-            <td>2869.2</td>
-            <td>-4122.6</td>
-            <td>-59.0 %</td>
+            <td>6480.9</td>
+            <td>2639.5</td>
+            <td>-3841.3</td>
+            <td>-59.3 %</td>
         </tr>
         <tr>
             <td>小拇指击键次数</td>
-            <td>5748</td>
+            <td>5914</td>
             <td>3686</td>
-            <td>-2062</td>
-            <td>-35.9 %</td>
+            <td>-2228</td>
+            <td>-37.7 %</td>
         </tr>
         <tr>
             <td>小拇指击键次数<br>（移动距离 > 1）<br>（容易出错）</td>
-            <td>2327</td>
-            <td>1038</td>
-            <td>-1289</td>
-            <td>-55.4 %</td>
+            <td>1993</td>
+            <td>995</td>
+            <td>-998</td>
+            <td>-50.1 %</td>
         </tr>
         <tr>
             <td>Delete<br>Esc<br>↑↓←→</td>
             <td>移动整只手</td>
             <td>移动一个手指</td>
-            <td></td>
-            <td></td>
+            <td colspan="2">未统计相应数据</td>
         </tr>
         <tr>
-            <td colspan="5">数据仅供参考。不同的语言可能有较大的统计差异。</td>
+            <td colspan="5">
+数据仅供参考。不同的语言可能有较大的统计差异。<br>
+小拇指向上下左右移动一个键位，计距离为 1
+            </td>
         </tr>
     </tbody>
 </table>
 
 
-## 主要变动：
+## 布局变动：
 
 - 移除太远的列
   - 小拇指只需负责额外一列（ 4 个键）
