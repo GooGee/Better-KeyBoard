@@ -1,5 +1,5 @@
 
-# Efficient-KeyBoard
+# Better-KeyBoard
 
 通过改变键盘布局来提升键入效率，减轻手指负担，同时降低键入错误的机率。
 
@@ -11,8 +11,8 @@
 - 小拇指负担减轻了 37.7 %
 - 小拇指移动距离减少了 59.3 %
 - 小拇指易错键入减少了 50.1 %
-- [数据来源](https://googee.github.io/Efficient-KeyBoard/statistic.html)
-- [键盘布局预览](https://googee.github.io/Efficient-KeyBoard)
+- [数据来源](https://googee.github.io/Better-KeyBoard/statistic.html)
+- [键盘布局预览](https://googee.github.io/Better-KeyBoard)
 
 <table>
     <caption>
