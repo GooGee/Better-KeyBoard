@@ -117,11 +117,14 @@
                     }
                 },
                 created() {
+                    const uri = window.location.search.substring(1)
+                    const sp = new URLSearchParams(uri)
+                    const layout = sp.get("layout") ?? "layout72.json"
                     fetch("static/layout61.json")
                         .then((response) => response.json())
                         .then((value) => (this.layout61 = value))
                         .catch((reason) => alert(reason))
-                    fetch("static/layout72.json")
+                    fetch("static/" + layout)
                         .then((response) => response.json())
                         .then((value) => (this.layout72 = value))
                         .catch((reason) => alert(reason))
