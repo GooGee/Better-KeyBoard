@@ -1,15 +1,32 @@
 import { useEffect, useState } from "react"
+import { animated, useSpring } from "react-spring"
 import Key from "../Model/Key"
 import KeyEnum from "../Model/KeyEnum"
 
 interface Property {
     item: Key
+    old: Key
     second: boolean
     setSecond(second: boolean): void
 }
 
+function makeStyle(item: Key) {
+    return {
+        left: item.left,
+        top: item.top,
+        width: item.width,
+        height: item.height,
+    }
+}
+
 export default function Box(property: Property) {
     const [down, setDown] = useState(false)
+
+    const style = useSpring({
+        to: makeStyle(property.item),
+        from: makeStyle(property.old),
+        backgroundColor: down ? "#eee" : "",
+    })
 
     useEffect(() => {
         if (property.item.text === KeyEnum.MO1) {
@@ -18,15 +35,9 @@ export default function Box(property: Property) {
     }, [property.item, property.second])
 
     return (
-        <div
+        <animated.div
             className="key-box absolute py-1 px-2"
-            style={{
-                left: property.item.left,
-                top: property.item.top,
-                width: property.item.width,
-                height: property.item.height,
-                backgroundColor: down ? "#eee" : "",
-            }}
+            style={style}
             onMouseDown={function () {
                 setDown(true)
                 if (property.item.text === KeyEnum.MO1) {
@@ -55,6 +66,6 @@ export default function Box(property: Property) {
             ) : (
                 ""
             )}
-        </div>
+        </animated.div>
     )
 }

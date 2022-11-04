@@ -10,6 +10,7 @@ interface Property {
 }
 
 const data = loadKeyzz(grid)
+const map = new Map(data.map((item) => [item.text, item]))
 
 export default function Board(property: Property) {
     const [keyzz, setKeyzz] = useState<Key[]>(data)
@@ -23,6 +24,7 @@ export default function Board(property: Property) {
             {keyzz.map((item) => (
                 <Box
                     item={item}
+                    old={map.get(item.text)!}
                     key={item.text}
                     second={second}
                     setSecond={setSecond}
