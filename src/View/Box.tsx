@@ -33,7 +33,16 @@ export default function Box(property: Property) {
                 property.setSecond(false)
             }}
         >
-            <pre className="whitespace-pre-wrap">
+            <pre
+                className={
+                    "whitespace-pre-wrap" +
+                    (property.second
+                        ? property.item.gray
+                            ? " text-slate-400"
+                            : ""
+                        : "")
+                }
+            >
                 {property.second ? property.item.second : property.item.text}
             </pre>
         </div>

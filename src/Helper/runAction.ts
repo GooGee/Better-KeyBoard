@@ -11,6 +11,7 @@ import moveRightHandKeyzz from "./moveRightHandKeyzz"
 import moveRow0 from "./moveRow0"
 import moveRow5 from "./moveRow5"
 import setKeyWidth from "./setKeyWidth"
+import setSecondKey from "./setSecondKey"
 
 interface Action {
     (data: Key[]): Key[]
@@ -29,6 +30,7 @@ const stepzz: Action[] = [
     moveCtrl,
     moveRCtrl,
     moveRow5,
+    setSecondKey,
 ]
 
 export default function runAction(index: number, keyzz: Key[]) {

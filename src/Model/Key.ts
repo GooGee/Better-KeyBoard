@@ -5,6 +5,8 @@ const BoxPadding = 4
 const BoxMargin = 4
 
 export default class Key {
+    gray = false
+
     constructor(
         public x: number,
         public y: number,
