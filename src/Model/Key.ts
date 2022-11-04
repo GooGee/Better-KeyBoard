@@ -17,6 +17,7 @@ export default class Key {
         public text: string,
         public second: string,
         public zIndex = 1,
+        public far = false,
     ) {}
 
     get left() {
@@ -46,6 +47,7 @@ export default class Key {
             this.text,
             this.second,
             this.zIndex,
+            this.far,
         )
     }
 }

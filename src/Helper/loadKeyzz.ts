@@ -11,6 +11,23 @@ interface KeyData {
     second: string
 }
 
+const farKeyzz = [
+    KeyEnum.Esc,
+    KeyEnum.Wave,
+    KeyEnum.Ctrl,
+    KeyEnum.RCtrl,
+
+    KeyEnum.Minus,
+    KeyEnum.Equal,
+    KeyEnum.BS,
+    KeyEnum.Delete,
+
+    KeyEnum.Square2,
+    KeyEnum.Enter,
+
+    KeyEnum.Bar,
+]
+
 const topKeyzz = [
     KeyEnum.BS,
     KeyEnum.Ctrl,
@@ -22,6 +39,7 @@ const topKeyzz = [
 
 export function prepareKey(map: Map<string, Key>) {
     topKeyzz.forEach((item) => (map.get(item)!.zIndex = 111))
+    farKeyzz.forEach((item) => (map.get(item)!.far = true))
 }
 
 export default function loadKeyzz(grid: KeyData[][]) {
