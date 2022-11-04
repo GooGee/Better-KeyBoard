@@ -5,7 +5,11 @@ import grid from "../keyzz.json"
 import Box from "./Box"
 import runAction from "../Helper/runAction"
 
-export default function Board() {
+interface Property {
+    setWide(wide: boolean): void
+}
+
+export default function Board(property: Property) {
     const [keyzz, setKeyzz] = useState<Key[]>(loadKeyzz(grid))
     const [step, setStep] = useState(0)
 
@@ -22,6 +26,12 @@ export default function Board() {
                 onClick={function () {
                     const result = runAction(step, keyzz)
                     if (result) {
+                        if (step === 1) {
+                            property.setWide(true)
+                        }
+                        if (step === 6) {
+                            property.setWide(false)
+                        }
                         setKeyzz(result)
                         setStep(step + 1)
                     }
