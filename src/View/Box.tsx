@@ -10,14 +10,12 @@ interface Property {
     setSecond(second: boolean): void
 }
 
-function makeStyle(item: Key, down: boolean) {
+function makeStyle(item: Key) {
     return {
         left: item.left,
         top: item.top,
         width: item.width,
         height: item.height,
-        backgroundColor: down ? "#eee" : "",
-        zIndex: item.zIndex,
     }
 }
 
@@ -25,8 +23,8 @@ export default function Box(property: Property) {
     const [down, setDown] = useState(false)
 
     const style = useSpring({
-        to: makeStyle(property.item, down),
-        from: makeStyle(property.old, down),
+        to: makeStyle(property.item),
+        from: makeStyle(property.old),
     })
 
     useEffect(() => {
@@ -38,7 +36,11 @@ export default function Box(property: Property) {
     return (
         <animated.div
             className="key-box absolute py-1 px-2"
-            style={style}
+            style={{
+                ...style,
+                backgroundColor: down ? "#eee" : "",
+                zIndex: property.item.zIndex,
+            }}
             onMouseDown={function () {
                 setDown(true)
                 if (property.item.text === KeyEnum.MO1) {

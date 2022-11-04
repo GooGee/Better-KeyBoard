@@ -1,5 +1,6 @@
 import Finger from "../Model/Finger"
 import Key from "../Model/Key"
+import KeyEnum from "../Model/KeyEnum"
 
 interface KeyData {
     x: number
@@ -8,6 +9,19 @@ interface KeyData {
     h: number
     text: string
     second: string
+}
+
+const topKeyzz = [
+    KeyEnum.BS,
+    KeyEnum.Ctrl,
+    KeyEnum.Delete,
+    KeyEnum.Enter,
+    KeyEnum.Esc,
+    KeyEnum.RCtrl,
+]
+
+export function prepareKey(map: Map<string, Key>) {
+    topKeyzz.forEach((item) => (map.get(item)!.zIndex = 111))
 }
 
 export default function loadKeyzz(grid: KeyData[][]) {
@@ -30,6 +44,7 @@ function makeKey(kd: KeyData, xi: number) {
     if (xi <= 1 || xi >= 10) {
         finger = Finger.little
     }
+
     return new Key(kd.x, kd.y, kd.w, kd.h, xi < 6, finger, kd.text, kd.second)
 }
 
