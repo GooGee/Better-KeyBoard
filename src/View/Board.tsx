@@ -9,8 +9,10 @@ interface Property {
     setWide(wide: boolean): void
 }
 
+const data = loadKeyzz(grid)
+
 export default function Board(property: Property) {
-    const [keyzz, setKeyzz] = useState<Key[]>(loadKeyzz(grid))
+    const [keyzz, setKeyzz] = useState<Key[]>(data)
     const [second, setSecond] = useState(false)
     const [step, setStep] = useState(0)
 
@@ -26,9 +28,22 @@ export default function Board(property: Property) {
             ))}
 
             <button
-                className="rounded-full border border-sky-500 hover:bg-sky-500 px-4 py-2"
+                className="rounded-full border border-red-500 hover:bg-red-500 px-4 py-2"
                 type="button"
                 style={{ position: "absolute", left: "0", top: "444px" }}
+                onClick={function () {
+                    setKeyzz(data)
+                    setSecond(false)
+                    setStep(0)
+                }}
+            >
+                reset
+            </button>
+
+            <button
+                className="rounded-full border border-sky-500 hover:bg-sky-500 px-4 py-2"
+                type="button"
+                style={{ position: "absolute", left: "111px", top: "444px" }}
                 onClick={function () {
                     const result = runAction(step, keyzz)
                     if (result) {
