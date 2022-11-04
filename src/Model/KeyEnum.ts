@@ -7,6 +7,7 @@ enum KeyEnum {
     Delete = "Delete",
     Dot = ">\n.",
     Enter = "Enter",
+    Esc = "Esc",
     Menu = "Menu",
     MO1 = "MO(1)",
     Quote = "\"\n'",

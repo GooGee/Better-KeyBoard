@@ -4,6 +4,7 @@ import Key from "../Model/Key"
 import grid from "../keyzz.json"
 import Box from "./Box"
 import { getAction } from "../Helper/makeActionzz"
+import KeyEnum from "../Model/KeyEnum"
 
 interface Property {
     setWide(wide: boolean): void
@@ -11,6 +12,12 @@ interface Property {
 
 const data = loadKeyzz(grid)
 const map = new Map(data.map((item) => [item.text, item]))
+map.get(KeyEnum.BS)!.zIndex = 111
+map.get(KeyEnum.Ctrl)!.zIndex = 111
+map.get(KeyEnum.Delete)!.zIndex = 111
+map.get(KeyEnum.Enter)!.zIndex = 111
+map.get(KeyEnum.Esc)!.zIndex = 111
+map.get(KeyEnum.RCtrl)!.zIndex = 111
 
 export default function Board(property: Property) {
     const [keyzz, setKeyzz] = useState<Key[]>(data)

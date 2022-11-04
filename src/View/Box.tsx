@@ -10,12 +10,14 @@ interface Property {
     setSecond(second: boolean): void
 }
 
-function makeStyle(item: Key) {
+function makeStyle(item: Key, down: boolean) {
     return {
         left: item.left,
         top: item.top,
         width: item.width,
         height: item.height,
+        backgroundColor: down ? "#eee" : "",
+        zIndex: item.zIndex,
     }
 }
 
@@ -23,9 +25,8 @@ export default function Box(property: Property) {
     const [down, setDown] = useState(false)
 
     const style = useSpring({
-        to: makeStyle(property.item),
-        from: makeStyle(property.old),
-        backgroundColor: down ? "#eee" : "",
+        to: makeStyle(property.item, down),
+        from: makeStyle(property.old, down),
     })
 
     useEffect(() => {
