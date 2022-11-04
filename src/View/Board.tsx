@@ -16,7 +16,7 @@ export default function Board() {
             ))}
 
             <button
-                className="rounded-full border px-4 py-2"
+                className="rounded-full border border-sky-500 hover:bg-sky-500 px-4 py-2"
                 type="button"
                 style={{ position: "absolute", left: "0", top: "444px" }}
                 onClick={function () {

@@ -7,7 +7,7 @@ interface Property {
 export default function Box(property: Property) {
     return (
         <div
-            className="absolute border border-slate-200 p-2"
+            className="key-box absolute py-1 px-2"
             style={{
                 display: "inline-block",
                 left: property.item.left,

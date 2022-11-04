@@ -8,6 +8,8 @@ export default function App() {
                 style={{
                     width: "1055px",
                     height: "520px",
+                    backgroundColor: "#e3e3e3",
+                    boxShadow: "inset 1px 1px 0px #f1f1f1, 3px 3px 6px 3px #303038",
                 }}
             >
                 <Board></Board>
