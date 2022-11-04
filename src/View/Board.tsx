@@ -11,12 +11,18 @@ interface Property {
 
 export default function Board(property: Property) {
     const [keyzz, setKeyzz] = useState<Key[]>(loadKeyzz(grid))
+    const [second, setSecond] = useState(false)
     const [step, setStep] = useState(0)
 
     return (
         <div className="relative">
             {keyzz.map((item) => (
-                <Box item={item} key={item.text}></Box>
+                <Box
+                    item={item}
+                    key={item.text}
+                    second={second}
+                    setSecond={setSecond}
+                ></Box>
             ))}
 
             <button
@@ -37,7 +43,7 @@ export default function Board(property: Property) {
                     }
                 }}
             >
-                +
+                next
             </button>
         </div>
     )

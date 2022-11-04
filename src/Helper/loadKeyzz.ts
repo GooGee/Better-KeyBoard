@@ -7,6 +7,7 @@ interface KeyData {
     w: number
     h: number
     text: string
+    second: string
 }
 
 export default function loadKeyzz(grid: KeyData[][]) {
@@ -29,7 +30,7 @@ function makeKey(kd: KeyData, xi: number) {
     if (xi <= 1 || xi >= 10) {
         finger = Finger.little
     }
-    return new Key(kd.x, kd.y, kd.w, kd.h, xi < 6, finger, kd.text)
+    return new Key(kd.x, kd.y, kd.w, kd.h, xi < 6, finger, kd.text, kd.second)
 }
 
 function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
@@ -43,6 +44,7 @@ function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
             true,
             Finger.little,
             kdzz[index].text,
+            kdzz[index].second,
         ),
     )
     index += 1
@@ -55,6 +57,7 @@ function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
             true,
             Finger.little,
             kdzz[index].text,
+            kdzz[index].second,
         ),
     )
     index += 1
@@ -67,6 +70,7 @@ function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
             true,
             Finger.thumb,
             kdzz[index].text,
+            kdzz[index].second,
         ),
     )
     index += 1
@@ -79,6 +83,7 @@ function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
             true,
             Finger.thumb,
             kdzz[index].text,
+            kdzz[index].second,
         ),
     )
     index += 1
@@ -91,6 +96,7 @@ function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
             false,
             Finger.thumb,
             kdzz[index].text,
+            kdzz[index].second,
         ),
     )
     index += 1
@@ -103,6 +109,7 @@ function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
             false,
             Finger.little,
             kdzz[index].text,
+            kdzz[index].second,
         ),
     )
     index += 1
@@ -115,6 +122,7 @@ function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
             false,
             Finger.little,
             kdzz[index].text,
+            kdzz[index].second,
         ),
     )
     index += 1
@@ -127,6 +135,7 @@ function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
             false,
             Finger.little,
             kdzz[index].text,
+            kdzz[index].second,
         ),
     )
 }

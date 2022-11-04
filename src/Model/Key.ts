@@ -13,6 +13,7 @@ export default class Key {
         public leftHand: boolean,
         public finger: Finger,
         public text: string,
+        public second: string,
     ) {}
 
     get left() {
@@ -40,6 +41,7 @@ export default class Key {
             this.leftHand,
             this.finger,
             this.text,
+            this.second,
         )
     }
 }
