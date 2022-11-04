@@ -2,6 +2,9 @@ import Key from "../Model/Key"
 
 export default function moveRow5(keyzz: Key[]) {
     return keyzz.map(function (item) {
+        if (item.y < 5) {
+            return item
+        }
         const key = item.clone()
         if (key.text === "Win") {
             key.x = 1

@@ -2,16 +2,17 @@ import Key from "../Model/Key"
 
 export default function moveRightHandKeyzz(keyzz: Key[]) {
     return keyzz.map(function (item) {
-        const key = item.clone()
-        if (key.y === 0) {
-            return key
+        if (item.y === 0 || item.y > 5) {
+            return item
         }
-        if (key.text === "Delete") {
-            return key
+        if (item.text === "Delete") {
+            return item
         }
-        if (key.y < 5 && key.leftHand === false) {
+        if (item.leftHand === false) {
+            const key = item.clone()
             key.x += 2
+            return key
         }
-        return key
+        return item
     })
 }
