@@ -15,7 +15,7 @@ export default function App() {
     return (
         <div className="container p-3">
             <div
-                className="overflow-hidden rounded-xl border border-slate-200 p-3"
+                className="overflow-hidden rounded-xl border border-slate-200 py-5 px-3"
                 style={{
                     width: (wide ? WidthMax : WidthMin) + "px",
                     height: "550px",

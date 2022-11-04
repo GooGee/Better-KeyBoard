@@ -1,7 +1,6 @@
 import { useState } from "react"
 import loadKeyzz, { prepareKey } from "../Helper/loadKeyzz"
 import Key from "../Model/Key"
-import grid from "../keyzz.json"
 import Box from "./Box"
 import { getAction } from "../Helper/makeActionzz"
 
@@ -9,7 +8,7 @@ interface Property {
     setWide(wide: boolean): void
 }
 
-const data = loadKeyzz(grid)
+const data = loadKeyzz()
 const map = new Map(data.map((item) => [item.text, item]))
 prepareKey(map)
 
@@ -32,7 +31,7 @@ export default function Board(property: Property) {
                 ></Box>
             ))}
 
-            <div style={{ position: "absolute", left: "0", top: "488px" }}>
+            <div style={{ position: "absolute", left: "0", top: "477px" }}>
                 <button
                     className="rounded-full border border-red-500 hover:bg-red-500 px-4 py-2"
                     type="button"

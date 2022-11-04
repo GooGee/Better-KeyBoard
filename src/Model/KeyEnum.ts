@@ -35,6 +35,7 @@ enum KeyEnum {
     I = "I",
     O = "O",
     P = "P",
+
     Caps = "Caps Lock",
     A = "A",
     S = "S",
@@ -45,6 +46,7 @@ enum KeyEnum {
     J = "J",
     K = "K",
     L = "L",
+
     Shift = "Shift",
     Z = "Z",
     X = "X",

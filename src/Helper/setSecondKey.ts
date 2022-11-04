@@ -4,7 +4,7 @@ import KeyEnum from "../Model/KeyEnum"
 const map: Map<string, string> = new Map([
     [KeyEnum.Tab, "~"],
     [KeyEnum.Caps, "`"],
-    [KeyEnum.Shift, "%"],
+    [KeyEnum.Shift, "!"],
 
     [KeyEnum.Q, "/"],
     [KeyEnum.A, "*"],
@@ -21,18 +21,18 @@ const map: Map<string, string> = new Map([
     [KeyEnum.U, "Home"],
     [KeyEnum.O, "End"],
 
-    [KeyEnum.P, "-"],
-    [KeyEnum.Square, ">"],
+    [KeyEnum.P, "_"],
+    [KeyEnum.Square, "|"],
 
-    [KeyEnum.Semicolon, "="],
-    [KeyEnum.Quote, ">"],
+    [KeyEnum.Semicolon, "-"],
+    [KeyEnum.Quote, "\\"],
 
     [KeyEnum.N, "^"],
-    [KeyEnum.M, "_"],
+    [KeyEnum.M, "&"],
     [KeyEnum.Comma, "("],
     [KeyEnum.Dot, ")"],
-    [KeyEnum.Slash, "\\"],
-    [KeyEnum.RShift, "|"],
+    [KeyEnum.Slash, "="],
+    [KeyEnum.RShift, ">"],
 ])
 
 export default function setSecondKey(keyzz: Key[]) {

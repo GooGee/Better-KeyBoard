@@ -1,6 +1,7 @@
 import Finger from "../Model/Finger"
 import Key from "../Model/Key"
 import KeyEnum from "../Model/KeyEnum"
+import grid from "../keyzz.json"
 
 interface KeyData {
     x: number
@@ -42,7 +43,7 @@ export function prepareKey(map: Map<string, Key>) {
     farKeyzz.forEach((item) => (map.get(item)!.far = true))
 }
 
-export default function loadKeyzz(grid: KeyData[][]) {
+export default function loadKeyzz() {
     const keyzz: Key[] = []
     grid.forEach(function (kdzz, yi) {
         if (yi === 5) {
