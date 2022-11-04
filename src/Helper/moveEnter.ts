@@ -6,6 +6,7 @@ export default function moveEnter(keyzz: Key[]) {
         if (item.text === KeyEnum.Enter) {
             const key = item.clone()
             key.x = 7
+            key.y += 1
             key.h = 2
             return key
         }

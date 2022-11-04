@@ -24,7 +24,7 @@ const stepzz: Action[] = [
     moveEsc,
     moveRow0,
     moveEnter,
-    moveBar,
+    // moveBar,
     moveBS,
     moveDelete,
     moveMO,

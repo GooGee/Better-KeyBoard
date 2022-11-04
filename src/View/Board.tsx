@@ -35,10 +35,10 @@ export default function Board(property: Property) {
                         if (step === 1) {
                             property.setWide(true)
                         }
-                        if (step === 6) {
+                        if (step === 5) {
                             property.setWide(false)
                         }
-                        if (step >= 12) {
+                        if (step >= 11) {
                             setSecond(true)
                         }
                         setKeyzz(result)
