@@ -3,7 +3,7 @@ import loadKeyzz from "../Helper/loadKeyzz"
 import Key from "../Model/Key"
 import grid from "../keyzz.json"
 import Box from "./Box"
-import runAction from "../Helper/runAction"
+import { getAction } from "../Helper/makeActionzz"
 
 interface Property {
     setWide(wide: boolean): void
@@ -16,6 +16,8 @@ export default function Board(property: Property) {
     const [second, setSecond] = useState(false)
     const [step, setStep] = useState(0)
 
+    const action = getAction(step)
+
     return (
         <div className="relative">
             {keyzz.map((item) => (
@@ -27,42 +29,43 @@ export default function Board(property: Property) {
                 ></Box>
             ))}
 
-            <button
-                className="rounded-full border border-red-500 hover:bg-red-500 px-4 py-2"
-                type="button"
-                style={{ position: "absolute", left: "0", top: "444px" }}
-                onClick={function () {
-                    setKeyzz(data)
-                    setSecond(false)
-                    setStep(0)
-                }}
-            >
-                reset
-            </button>
+            <div style={{ position: "absolute", left: "0", top: "488px" }}>
+                <button
+                    className="rounded-full border border-red-500 hover:bg-red-500 px-4 py-2"
+                    type="button"
+                    onClick={function () {
+                        setKeyzz(data)
+                        setSecond(false)
+                        setStep(0)
+                    }}
+                >
+                    重置
+                </button>
 
-            <button
-                className="rounded-full border border-sky-500 hover:bg-sky-500 px-4 py-2"
-                type="button"
-                style={{ position: "absolute", left: "111px", top: "444px" }}
-                onClick={function () {
-                    const result = runAction(step, keyzz)
-                    if (result) {
-                        if (step === 1) {
-                            property.setWide(true)
-                        }
-                        if (step === 5) {
-                            property.setWide(false)
-                        }
-                        if (step >= 11) {
-                            setSecond(true)
-                        }
-                        setKeyzz(result)
-                        setStep(step + 1)
-                    }
-                }}
-            >
-                next
-            </button>
+                {action === null ? null : (
+                    <button
+                        className="rounded-full border border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
+                        type="button"
+                        onClick={function () {
+                            if (action) {
+                                if (step === 1) {
+                                    property.setWide(true)
+                                }
+                                if (step === 5) {
+                                    property.setWide(false)
+                                }
+                                if (step >= 11) {
+                                    setSecond(true)
+                                }
+                                setKeyzz(action.method(keyzz))
+                                setStep(step + 1)
+                            }
+                        }}
+                    >
+                        {action.description}
+                    </button>
+                )}
+            </div>
         </div>
     )
 }
