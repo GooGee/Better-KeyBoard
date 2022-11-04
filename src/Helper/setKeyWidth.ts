@@ -1,4 +1,5 @@
 import Key from "../Model/Key"
+import KeyEnum from "../Model/KeyEnum"
 
 export default function setKeyWidth(keyzz: Key[]) {
     let x = 0
@@ -7,7 +8,7 @@ export default function setKeyWidth(keyzz: Key[]) {
         if (item.y === 0 || item.y > 5) {
             return item
         }
-        if (item.text === "Delete") {
+        if (item.text === KeyEnum.Delete) {
             return item
         }
         if (y === item.y) {

@@ -1,11 +1,11 @@
 import Key from "../Model/Key"
+import KeyEnum from "../Model/KeyEnum"
 
 export default function moveBS(keyzz: Key[]) {
     return keyzz.map(function (item) {
-        if (item.text === "BS") {
+        if (item.text === KeyEnum.BS) {
             const key = item.clone()
             key.x = 6
-            key.y = 1.5
             key.h = 2
             return key
         }
