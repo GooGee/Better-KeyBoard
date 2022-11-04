@@ -38,6 +38,9 @@ export default function Board(property: Property) {
                         if (step === 6) {
                             property.setWide(false)
                         }
+                        if (step >= 12) {
+                            setSecond(true)
+                        }
                         setKeyzz(result)
                         setStep(step + 1)
                     }

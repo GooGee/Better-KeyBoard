@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Key from "../Model/Key"
 import KeyEnum from "../Model/KeyEnum"
 
@@ -11,11 +11,16 @@ interface Property {
 export default function Box(property: Property) {
     const [down, setDown] = useState(false)
 
+    useEffect(() => {
+        if (property.item.text === KeyEnum.MO1) {
+            setDown(property.second)
+        }
+    }, [property.item, property.second])
+
     return (
         <div
             className="key-box absolute py-1 px-2"
             style={{
-                display: "inline-block",
                 left: property.item.left,
                 top: property.item.top,
                 width: property.item.width,
@@ -35,7 +40,7 @@ export default function Box(property: Property) {
         >
             <pre
                 className={
-                    "whitespace-pre-wrap" +
+                    "h-12 whitespace-pre-wrap" +
                     (property.second
                         ? property.item.gray
                             ? " text-slate-400"
@@ -45,6 +50,11 @@ export default function Box(property: Property) {
             >
                 {property.second ? property.item.second : property.item.text}
             </pre>
+            {property.item.text === KeyEnum.Semicolon ? (
+                <span className="relative left-4 bottom-5 text-red-500">小</span>
+            ) : (
+                ""
+            )}
         </div>
     )
 }
