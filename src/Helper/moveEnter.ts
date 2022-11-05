@@ -1,3 +1,4 @@
+import Finger from "../Model/Finger"
 import Key from "../Model/Key"
 import KeyEnum from "../Model/KeyEnum"
 
@@ -8,6 +9,7 @@ export default function moveEnter(keyzz: Key[]) {
             key.x = 7
             key.y += 1
             key.h = 2
+            key.finger = Finger.index
             return key
         }
         return item

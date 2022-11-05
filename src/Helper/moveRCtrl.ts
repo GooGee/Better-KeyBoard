@@ -1,3 +1,4 @@
+import Finger from "../Model/Finger"
 import Key from "../Model/Key"
 import KeyEnum from "../Model/KeyEnum"
 
@@ -8,6 +9,8 @@ export default function moveRCtrl(keyzz: Key[]) {
             key.x = 9
             key.y += 1
             key.w = 2
+            key.far = false
+            key.finger = Finger.thumb
             return key
         }
         return item

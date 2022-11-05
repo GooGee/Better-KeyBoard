@@ -1,3 +1,4 @@
+import Finger from "../Model/Finger"
 import Key from "../Model/Key"
 
 export default function moveEsc(keyzz: Key[]) {
@@ -7,6 +8,7 @@ export default function moveEsc(keyzz: Key[]) {
             key.x = 6
             key.y = 3.5
             key.h = 2
+            key.finger = Finger.index
             return key
         }
         return item

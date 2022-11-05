@@ -1,3 +1,4 @@
+import Finger from "../Model/Finger"
 import Key from "../Model/Key"
 import KeyEnum from "../Model/KeyEnum"
 
@@ -6,6 +7,7 @@ export default function moveDelete(keyzz: Key[]) {
         if (item.text === KeyEnum.Delete) {
             const key = item.clone()
             key.x = 7
+            key.finger = Finger.index
             return key
         }
         return item
