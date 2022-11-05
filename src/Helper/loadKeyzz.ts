@@ -51,20 +51,28 @@ export default function loadKeyzz() {
             return
         }
         kdzz.forEach(function (kd, xi) {
-            keyzz.push(makeKey(kd, xi))
+            keyzz.push(makeKey(kd, xi, yi))
         })
     })
 
     return keyzz
 }
 
-function makeKey(kd: KeyData, xi: number) {
+function makeKey(kd: KeyData, xi: number, yi: number) {
+    const far = yi <= 1 ? true : false
     let finger = Finger.thumb
-    if (xi <= 1 || xi >= 10) {
+    const x = xi - (yi === 0 ? 1 : 0)
+    if (x <= 1 || x >= 10) {
         finger = Finger.little
+    } else if (x === 2 || x === 9) {
+        finger = Finger.ring
+    } else if (x === 3 || x === 8) {
+        finger = Finger.middle
+    } else {
+        finger = Finger.index
     }
 
-    return new Key(kd.x, kd.y, kd.w, kd.h, xi < 6, finger, kd.text, kd.second)
+    return new Key(kd.x, kd.y, kd.w, kd.h, x < 6, finger, kd.text, kd.second, 1, far)
 }
 
 function makeLastRow(keyzz: Key[], kdzz: KeyData[]) {
