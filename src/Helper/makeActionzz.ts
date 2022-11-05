@@ -1,4 +1,4 @@
-import Action from "../Model/Action"
+import Key from "../Model/Key"
 import moveBar from "./moveBar"
 import moveBS from "./moveBS"
 import moveCtrl from "./moveCtrl"
@@ -13,6 +13,14 @@ import moveRow5 from "./moveRow5"
 import setKeyWidth from "./setKeyWidth"
 import setSecondKey from "./setSecondKey"
 import showSecond from "./showSecond"
+
+class Action {
+    constructor(readonly description: string, readonly method: Method) {}
+}
+
+interface Method {
+    (data: Key[]): Key[]
+}
 
 export default function makeActionzz() {
     return actionzz
