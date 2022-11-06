@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react"
 import { animated, useSpring } from "react-spring"
+import Finger from "../Model/Finger"
 import Key from "../Model/Key"
 import KeyEnum from "../Model/KeyEnum"
 
 interface Property {
+    finger: Finger
+    leftHand: boolean
     item: Key
     old: Key
     second: boolean
+    setFinger(item?: Key): void
     setSecond(second: boolean): void
 }
 
@@ -33,13 +37,39 @@ export default function Box(property: Property) {
         }
     }, [property.item, property.second])
 
+    function getBGC() {
+        if (down) {
+            return "#ccc"
+        }
+
+        if (property.finger === Finger.unknown) {
+            return ""
+        }
+
+        if (
+            property.finger === property.item.finger &&
+            (property.leftHand === property.item.leftHand ||
+                property.finger === Finger.thumb)
+        ) {
+            return "#eee"
+        }
+
+        return ""
+    }
+
     return (
         <animated.div
             className="key-box absolute py-1 px-2"
             style={{
                 ...style,
-                backgroundColor: down ? "#eee" : "",
+                backgroundColor: getBGC(),
                 zIndex: property.item.zIndex,
+            }}
+            onMouseEnter={function () {
+                property.setFinger(property.item)
+            }}
+            onMouseLeave={function () {
+                property.setFinger()
             }}
             onMouseDown={function () {
                 setDown(true)

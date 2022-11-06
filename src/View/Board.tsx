@@ -1,6 +1,7 @@
 import { useState } from "react"
 import loadKeyzz, { prepareKey } from "../Helper/loadKeyzz"
 import { getAction } from "../Helper/makeActionzz"
+import Finger from "../Model/Finger"
 import Key from "../Model/Key"
 import Box from "./Box"
 import ResultModal from "./ResultModal"
@@ -14,6 +15,7 @@ const map = new Map(data.map((item) => [item.text, item]))
 prepareKey(map)
 
 export default function Board(property: Property) {
+    const [finger, setFinger] = useState<Key>()
     const [keyzz, setKeyzz] = useState<Key[]>(data)
     const [second, setSecond] = useState(false)
     const [step, setStep] = useState(0)
@@ -25,17 +27,20 @@ export default function Board(property: Property) {
         <div className="relative">
             {keyzz.map((item) => (
                 <Box
+                    finger={finger?.finger ?? Finger.unknown}
+                    leftHand={finger?.leftHand ? true : false}
                     item={item}
                     old={map.get(item.text)!}
                     key={item.text}
                     second={second}
+                    setFinger={setFinger}
                     setSecond={setSecond}
                 ></Box>
             ))}
 
             <div style={{ position: "absolute", left: "0", top: "477px" }}>
                 <button
-                    className="rounded-full border border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
+                    className="rounded-full border-2 border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
                     type="button"
                     onClick={function () {
                         setVisible(true)
@@ -45,7 +50,7 @@ export default function Board(property: Property) {
                 </button>
 
                 <button
-                    className="rounded-full border border-red-500 hover:bg-red-500 px-4 py-2 ml-3"
+                    className="rounded-full border-2 border-red-500 hover:bg-red-500 px-4 py-2 ml-3"
                     type="button"
                     onClick={function () {
                         setKeyzz(data)
@@ -58,7 +63,7 @@ export default function Board(property: Property) {
 
                 {action === null ? null : (
                     <button
-                        className="rounded-full border border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
+                        className="rounded-full border-2 border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
                         type="button"
                         onClick={function () {
                             if (action) {
