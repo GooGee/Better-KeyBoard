@@ -196,7 +196,7 @@ export class LeftRightHand {
     readonly left = new Hand(true)
     readonly right = new Hand(false)
 
-    sum(far = false, finger: null | keyof typeof Finger = null) {
+    sum(far = false, finger: null | "little" = null) {
         if (finger === null) {
             if (far) {
                 return this.left.far + this.right.far
