@@ -1,4 +1,5 @@
 enum Finger {
+    unknown = "",
     thumb = "thumb",
     index = "index",
     middle = "middle",

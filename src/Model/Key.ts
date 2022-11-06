@@ -14,10 +14,10 @@ export default class Key {
         public h: number,
         public leftHand: boolean,
         public finger: Finger,
+        public far: boolean,
         public text: string,
         public second: string,
         public zIndex = 1,
-        public far = false,
     ) {}
 
     get left() {
@@ -44,10 +44,10 @@ export default class Key {
             this.h,
             this.leftHand,
             this.finger,
+            this.far,
             this.text,
             this.second,
             this.zIndex,
-            this.far,
         )
     }
 }

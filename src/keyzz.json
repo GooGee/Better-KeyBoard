@@ -5,6 +5,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": true,
             "text": "Esc",
             "second": ""
         },
@@ -13,6 +16,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "",
+            "far": true,
             "text": "F1",
             "second": ""
         },
@@ -21,6 +27,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "",
+            "far": true,
             "text": "F2",
             "second": ""
         },
@@ -29,6 +38,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "",
+            "far": true,
             "text": "F3",
             "second": ""
         },
@@ -37,6 +49,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "",
+            "far": true,
             "text": "F4",
             "second": ""
         },
@@ -45,6 +60,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "",
+            "far": true,
             "text": "F5",
             "second": ""
         },
@@ -53,6 +71,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "",
+            "far": true,
             "text": "F6",
             "second": ""
         },
@@ -61,6 +82,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "",
+            "far": true,
             "text": "F7",
             "second": ""
         },
@@ -69,6 +93,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "",
+            "far": true,
             "text": "F8",
             "second": ""
         },
@@ -77,6 +104,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "",
+            "far": true,
             "text": "F9",
             "second": ""
         },
@@ -85,6 +115,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "",
+            "far": true,
             "text": "F10",
             "second": ""
         },
@@ -93,6 +126,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "",
+            "far": true,
             "text": "F11",
             "second": ""
         },
@@ -101,6 +137,9 @@
             "y": 0,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "",
+            "far": true,
             "text": "F12",
             "second": ""
         }
@@ -111,6 +150,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": true,
             "text": "~\n`",
             "second": ""
         },
@@ -119,6 +161,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": true,
             "text": "!\n1",
             "second": ""
         },
@@ -127,6 +172,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "ring",
+            "far": true,
             "text": "@\n2",
             "second": ""
         },
@@ -135,6 +183,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "middle",
+            "far": true,
             "text": "#\n3",
             "second": ""
         },
@@ -143,6 +194,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "index",
+            "far": true,
             "text": "$\n4",
             "second": ""
         },
@@ -151,6 +205,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "index",
+            "far": true,
             "text": "%\n5",
             "second": ""
         },
@@ -159,6 +216,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "index",
+            "far": true,
             "text": "^\n6",
             "second": ""
         },
@@ -167,6 +227,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "index",
+            "far": true,
             "text": "&\n7",
             "second": ""
         },
@@ -175,6 +238,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "middle",
+            "far": true,
             "text": "*\n8",
             "second": ""
         },
@@ -183,6 +249,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "ring",
+            "far": true,
             "text": "(\n9",
             "second": ""
         },
@@ -191,6 +260,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": true,
             "text": ")\n0",
             "second": ""
         },
@@ -199,6 +271,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": true,
             "text": "_\n-",
             "second": ""
         },
@@ -207,6 +282,9 @@
             "y": 1.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": true,
             "text": "+\n=",
             "second": ""
         },
@@ -215,6 +293,9 @@
             "y": 1.5,
             "w": 2,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": true,
             "text": "BS",
             "second": ""
         },
@@ -223,6 +304,9 @@
             "y": 1.5,
             "w": 1,
             "h": 2,
+            "leftHand": false,
+            "finger": "little",
+            "far": true,
             "text": "Delete",
             "second": ""
         }
@@ -233,6 +317,9 @@
             "y": 2.5,
             "w": 1.5,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": false,
             "text": "Tab",
             "second": ""
         },
@@ -241,6 +328,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": false,
             "text": "Q",
             "second": ""
         },
@@ -249,6 +339,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "ring",
+            "far": false,
             "text": "W",
             "second": "7"
         },
@@ -257,6 +350,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "middle",
+            "far": false,
             "text": "E",
             "second": "8"
         },
@@ -265,6 +361,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "index",
+            "far": false,
             "text": "R",
             "second": "9"
         },
@@ -273,6 +372,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "index",
+            "far": false,
             "text": "T",
             "second": ""
         },
@@ -281,6 +383,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "index",
+            "far": false,
             "text": "Y",
             "second": ""
         },
@@ -289,6 +394,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "index",
+            "far": false,
             "text": "U",
             "second": ""
         },
@@ -297,6 +405,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "middle",
+            "far": false,
             "text": "I",
             "second": "↑"
         },
@@ -305,6 +416,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "ring",
+            "far": false,
             "text": "O",
             "second": ""
         },
@@ -313,6 +427,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "P",
             "second": ""
         },
@@ -321,6 +438,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "{\n[",
             "second": ""
         },
@@ -329,6 +449,9 @@
             "y": 2.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "}\n]",
             "second": ""
         },
@@ -337,6 +460,9 @@
             "y": 2.5,
             "w": 1.5,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "Enter",
             "second": ""
         }
@@ -347,6 +473,9 @@
             "y": 3.5,
             "w": 1.75,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": false,
             "text": "Caps Lock",
             "second": ""
         },
@@ -355,6 +484,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": false,
             "text": "A",
             "second": ""
         },
@@ -363,6 +495,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "ring",
+            "far": false,
             "text": "S",
             "second": "4"
         },
@@ -371,6 +506,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "middle",
+            "far": false,
             "text": "D",
             "second": "5"
         },
@@ -379,6 +517,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "index",
+            "far": false,
             "text": "F",
             "second": "6"
         },
@@ -387,6 +528,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "index",
+            "far": false,
             "text": "G",
             "second": ""
         },
@@ -395,6 +539,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "index",
+            "far": false,
             "text": "H",
             "second": ""
         },
@@ -403,6 +550,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "index",
+            "far": false,
             "text": "J",
             "second": "←"
         },
@@ -411,6 +561,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "middle",
+            "far": false,
             "text": "K",
             "second": "↓"
         },
@@ -419,6 +572,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "ring",
+            "far": false,
             "text": "L",
             "second": "→"
         },
@@ -427,6 +583,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": ":\n;",
             "second": ""
         },
@@ -435,6 +594,9 @@
             "y": 3.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "\"\n'",
             "second": ""
         },
@@ -443,6 +605,9 @@
             "y": 3.5,
             "w": 2.25,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "|\n\\",
             "second": ""
         }
@@ -453,6 +618,9 @@
             "y": 4.5,
             "w": 2.25,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": false,
             "text": "Shift",
             "second": ""
         },
@@ -461,6 +629,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": false,
             "text": "Z",
             "second": ""
         },
@@ -469,6 +640,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "ring",
+            "far": false,
             "text": "X",
             "second": "1"
         },
@@ -477,6 +651,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "middle",
+            "far": false,
             "text": "C",
             "second": "2"
         },
@@ -485,6 +662,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "index",
+            "far": false,
             "text": "V",
             "second": "3"
         },
@@ -493,6 +673,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": true,
+            "finger": "index",
+            "far": false,
             "text": "B",
             "second": ""
         },
@@ -501,6 +684,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "index",
+            "far": false,
             "text": "N",
             "second": ""
         },
@@ -509,6 +695,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "index",
+            "far": false,
             "text": "M",
             "second": ""
         },
@@ -517,6 +706,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "middle",
+            "far": false,
             "text": "<\n,",
             "second": ""
         },
@@ -525,6 +717,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "ring",
+            "far": false,
             "text": ">\n.",
             "second": ""
         },
@@ -533,6 +728,9 @@
             "y": 4.5,
             "w": 1,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "?\n/",
             "second": ""
         },
@@ -541,6 +739,9 @@
             "y": 4.5,
             "w": 2.75,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "RShift",
             "second": ""
         }
@@ -551,6 +752,9 @@
             "y": 5.5,
             "w": 1.25,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": false,
             "text": "Ctrl",
             "second": ""
         },
@@ -559,6 +763,9 @@
             "y": 5.5,
             "w": 1.25,
             "h": 1,
+            "leftHand": true,
+            "finger": "little",
+            "far": false,
             "text": "Win",
             "second": ""
         },
@@ -567,6 +774,9 @@
             "y": 5.5,
             "w": 1.25,
             "h": 1,
+            "leftHand": true,
+            "finger": "thumb",
+            "far": false,
             "text": "Alt",
             "second": ""
         },
@@ -575,6 +785,9 @@
             "y": 5.5,
             "w": 6.25,
             "h": 1,
+            "leftHand": true,
+            "finger": "thumb",
+            "far": false,
             "text": "",
             "second": ""
         },
@@ -583,6 +796,9 @@
             "y": 5.5,
             "w": 1.25,
             "h": 1,
+            "leftHand": false,
+            "finger": "thumb",
+            "far": false,
             "text": "RAlt",
             "second": ""
         },
@@ -591,6 +807,9 @@
             "y": 5.5,
             "w": 1.25,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "RWin",
             "second": ""
         },
@@ -599,6 +818,9 @@
             "y": 5.5,
             "w": 1.25,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "Menu",
             "second": "Reset"
         },
@@ -607,6 +829,9 @@
             "y": 5.5,
             "w": 1.25,
             "h": 1,
+            "leftHand": false,
+            "finger": "little",
+            "far": false,
             "text": "RCtrl",
             "second": ""
         }
@@ -617,6 +842,9 @@
             "y": 6.5,
             "w": 4,
             "h": 1,
+            "leftHand": true,
+            "finger": "thumb",
+            "far": false,
             "text": "MO(1)",
             "second": ""
         }
