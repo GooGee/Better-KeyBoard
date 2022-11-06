@@ -5,7 +5,7 @@ import ToolTip from "./ToolTip"
 
 export default function ResultModal() {
     const [result, setResult] = useState<Result>()
-    const [uri, setUri] = useState("/es2015.ts")
+    const [uri, setUri] = useState("https://googee.github.io/Better-KeyBoard/es2015.ts")
 
     useEffect(() => {
         count()
