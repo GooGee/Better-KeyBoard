@@ -19,7 +19,7 @@ class Action {
 }
 
 interface Method {
-    (data: Key[]): Key[]
+    (keyzz: Key[]): Key[]
 }
 
 export default function makeActionzz() {
@@ -31,6 +31,13 @@ export function getAction(index: number) {
         return actionzz[index]
     }
     return null
+}
+
+export function runAll(keyzz: Key[]) {
+    for (const item of actionzz) {
+        keyzz = item.method(keyzz)
+    }
+    return keyzz
 }
 
 const actionzz: Action[] = [

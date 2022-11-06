@@ -1,8 +1,9 @@
 import { useState } from "react"
 import loadKeyzz, { prepareKey } from "../Helper/loadKeyzz"
+import { getAction } from "../Helper/makeActionzz"
 import Key from "../Model/Key"
 import Box from "./Box"
-import { getAction } from "../Helper/makeActionzz"
+import ResultModal from "./ResultModal"
 
 interface Property {
     setWide(wide: boolean): void
@@ -16,6 +17,7 @@ export default function Board(property: Property) {
     const [keyzz, setKeyzz] = useState<Key[]>(data)
     const [second, setSecond] = useState(false)
     const [step, setStep] = useState(0)
+    const [visible, setVisible] = useState(false)
 
     const action = getAction(step)
 
@@ -33,7 +35,17 @@ export default function Board(property: Property) {
 
             <div style={{ position: "absolute", left: "0", top: "477px" }}>
                 <button
-                    className="rounded-full border border-red-500 hover:bg-red-500 px-4 py-2"
+                    className="rounded-full border border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
+                    type="button"
+                    onClick={function () {
+                        setVisible(true)
+                    }}
+                >
+                    统计
+                </button>
+
+                <button
+                    className="rounded-full border border-red-500 hover:bg-red-500 px-4 py-2 ml-3"
                     type="button"
                     onClick={function () {
                         setKeyzz(data)
@@ -68,6 +80,22 @@ export default function Board(property: Property) {
                     </button>
                 )}
             </div>
+
+            {visible ? (
+                <div
+                    className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-black/25"
+                    onClick={function () {
+                        setVisible(false)
+                    }}
+                >
+                    <div
+                        className="bg-white p-8"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <ResultModal></ResultModal>
+                    </div>
+                </div>
+            ) : null}
         </div>
     )
 }

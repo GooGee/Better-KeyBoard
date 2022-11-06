@@ -39,7 +39,7 @@ const topKeyzz = [
 ]
 
 export function prepareKey(map: Map<string, Key>) {
-    topKeyzz.forEach((item) => (map.get(item)!.zIndex = 111))
+    topKeyzz.forEach((item) => (map.get(item)!.zIndex = 11))
     farKeyzz.forEach((item) => (map.get(item)!.far = true))
 }
 
