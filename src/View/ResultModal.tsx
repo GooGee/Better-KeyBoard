@@ -21,13 +21,44 @@ export default function ResultModal() {
     }
 
     if (result === undefined) {
-        return <table className="h-24 w-24"></table>
+        return (
+            <div className="w-44 h-44 grid place-content-center">
+                <svg
+                    className="animate-spin -ml-1 h-11 w-11 text-sky-500"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                >
+                    <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                    ></circle>
+                    <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                </svg>
+            </div>
+        )
     }
 
     return (
         <table>
             <caption>新布局击键次数变化（对比标准键盘）</caption>
             <tbody>
+                <tr>
+                    <td className="p-1 border-t border-slate-300 border-solid">
+                        小手指击键次数（手指移动距离 &gt; 1）
+                    </td>
+                    <td className="p-1 border-t border-slate-300 border-solid">
+                        -100 %
+                    </td>
+                </tr>
                 <tr>
                     <td className="p-1 border-t border-slate-300 border-solid">
                         小手指击键次数
@@ -84,7 +115,25 @@ export default function ResultModal() {
                 </tr>
                 <tr>
                     <td className="p-1 border-t border-slate-300 border-solid">
-                        双手击键次数（手指移动距离 &gt; 1）
+                        十指击键次数
+                    </td>
+                    <td className="p-1 border-t border-slate-300 border-solid">
+                        <ToolTip
+                            tip={
+                                <span>
+                                    {result.result0.sum()}
+                                    <br />
+                                    {result.result1.sum()}
+                                </span>
+                            }
+                        >
+                            {result.all}
+                        </ToolTip>
+                    </td>
+                </tr>
+                <tr>
+                    <td className="p-1 border-t border-slate-300 border-solid">
+                        十指击键次数（手指移动距离 &gt; 1）
                     </td>
                     <td className="p-1 border-t border-slate-300 border-solid">
                         <ToolTip
@@ -133,24 +182,6 @@ export default function ResultModal() {
                             }
                         >
                             {result.strokeRight}
-                        </ToolTip>
-                    </td>
-                </tr>
-                <tr>
-                    <td className="p-1 border-t border-slate-300 border-solid">
-                        双手击键次数
-                    </td>
-                    <td className="p-1 border-t border-slate-300 border-solid">
-                        <ToolTip
-                            tip={
-                                <span>
-                                    {result.result0.sum()}
-                                    <br />
-                                    {result.result1.sum()}
-                                </span>
-                            }
-                        >
-                            {result.all}
                         </ToolTip>
                     </td>
                 </tr>
