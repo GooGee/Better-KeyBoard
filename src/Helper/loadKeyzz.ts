@@ -1,20 +1,6 @@
 import Finger from "../Model/Finger"
 import Key from "../Model/Key"
-import KeyEnum from "../Model/KeyEnum"
 import grid from "../keyzz.json"
-
-const topKeyzz = [
-    KeyEnum.BS,
-    KeyEnum.Ctrl,
-    KeyEnum.Delete,
-    KeyEnum.Enter,
-    KeyEnum.Esc,
-    KeyEnum.RCtrl,
-]
-
-export function prepareKey(map: Map<string, Key>) {
-    topKeyzz.forEach((item) => (map.get(item)!.zIndex = 11))
-}
 
 export default function loadKeyzz() {
     const keyzz: Key[] = []
@@ -31,7 +17,6 @@ export default function loadKeyzz() {
                     kd.far,
                     kd.text,
                     kd.second,
-                    1,
                 ),
             )
         })

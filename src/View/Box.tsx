@@ -14,6 +14,15 @@ interface Property {
     setSecond(second: boolean): void
 }
 
+const topKeyzz = new Set([
+    KeyEnum.BS as string,
+    KeyEnum.Ctrl,
+    KeyEnum.Delete,
+    KeyEnum.Enter,
+    KeyEnum.Esc,
+    KeyEnum.RCtrl,
+])
+
 function makeStyle(item: Key) {
     return {
         left: item.left,
@@ -63,7 +72,7 @@ export default function Box(property: Property) {
             style={{
                 ...style,
                 backgroundColor: getBGC(),
-                zIndex: property.item.zIndex,
+                zIndex: topKeyzz.has(property.item.text) ? 11 : 1,
             }}
             onMouseEnter={function () {
                 property.setFinger(property.item)

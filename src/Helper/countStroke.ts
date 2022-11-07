@@ -161,30 +161,10 @@ function addAll(
 function countHand(item: StrokeState, hand: Hand) {
     hand.amount += 1
     hand.far += item.far
-    switch (item.finger) {
-        case Finger.thumb:
-            add(item, hand.thumb)
-            break
-
-        case Finger.index:
-            add(item, hand.index)
-            break
-
-        case Finger.middle:
-            add(item, hand.middle)
-            break
-
-        case Finger.ring:
-            add(item, hand.ring)
-            break
-
-        case Finger.little:
-            add(item, hand.little)
-            break
-
-        default:
-            break
+    if (item.finger === Finger.unknown) {
+        return
     }
+    add(item, hand[item.finger])
 }
 
 function add(item: StrokeState, finger: StrokeState) {

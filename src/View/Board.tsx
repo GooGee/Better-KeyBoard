@@ -1,5 +1,5 @@
 import { useState } from "react"
-import loadKeyzz, { prepareKey } from "../Helper/loadKeyzz"
+import loadKeyzz from "../Helper/loadKeyzz"
 import { getAction } from "../Helper/makeActionzz"
 import Finger from "../Model/Finger"
 import Key from "../Model/Key"
@@ -12,7 +12,6 @@ interface Property {
 
 const data = loadKeyzz()
 const map = new Map(data.map((item) => [item.text, item]))
-prepareKey(map)
 
 export default function Board(property: Property) {
     const [finger, setFinger] = useState<Key>()
