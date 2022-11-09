@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { animated, useSpring } from "react-spring"
 import Finger from "../Model/Finger"
 import Key from "../Model/Key"
@@ -33,21 +32,8 @@ function makeStyle(item: Key) {
 }
 
 export default function Box(property: Property) {
-    const [down, setDown] = useState(false)
-
-    const style = useSpring({
-        to: makeStyle(property.item),
-        from: makeStyle(property.old),
-    })
-
-    useEffect(() => {
-        if (property.item.text === KeyEnum.MO1) {
-            setDown(property.second)
-        }
-    }, [property.item, property.second])
-
     function getBGC() {
-        if (down) {
+        if (property.item.text === KeyEnum.MO1 && property.second) {
             return "#ccc"
         }
 
@@ -70,7 +56,10 @@ export default function Box(property: Property) {
         <animated.div
             className="key-box absolute py-1 px-2"
             style={{
-                ...style,
+                ...useSpring({
+                    to: makeStyle(property.item),
+                    from: makeStyle(property.old),
+                }),
                 backgroundColor: getBGC(),
                 zIndex: topKeyzz.has(property.item.text) ? 11 : 1,
             }}
@@ -80,15 +69,10 @@ export default function Box(property: Property) {
             onMouseLeave={function () {
                 property.setFinger()
             }}
-            onMouseDown={function () {
-                setDown(true)
+            onClick={function () {
                 if (property.item.text === KeyEnum.MO1) {
-                    property.setSecond(true)
+                    property.setSecond(!property.second)
                 }
-            }}
-            onMouseUp={function () {
-                setDown(false)
-                property.setSecond(false)
             }}
         >
             <pre
