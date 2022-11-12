@@ -3,11 +3,12 @@ import loadKeyzz from "../Helper/loadKeyzz"
 import { getAction } from "../Helper/makeActionzz"
 import Finger from "../Model/Finger"
 import Key from "../Model/Key"
+import { Width14, Width15, Width16 } from "./App"
 import Box from "./Box"
 import ResultModal from "./ResultModal"
 
 interface Property {
-    setWide(wide: boolean): void
+    setWidth(width: number): void
 }
 
 const data = loadKeyzz()
@@ -68,14 +69,17 @@ export default function Board(property: Property) {
                         type="button"
                         onClick={function () {
                             if (action) {
-                                if (step === 1) {
-                                    property.setWide(true)
+                                if (action.method.name === "moveRightHandKeyzz") {
+                                    property.setWidth(Width16)
                                 }
-                                if (step === 5) {
-                                    property.setWide(false)
+                                if (action.method.name === "moveBS") {
+                                    property.setWidth(Width15)
                                 }
-                                if (step >= 11) {
+                                if (action.method.name === "showSecond") {
                                     setSecond(true)
+                                }
+                                if (action.method.name === "hideRightColumn") {
+                                    property.setWidth(Width14)
                                 }
                                 setKeyzz(action.method(keyzz))
                                 setStep(step + 1)
