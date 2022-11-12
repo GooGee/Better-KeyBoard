@@ -1,4 +1,5 @@
 import Key from "../Model/Key"
+import hideRightColumn from "./hideRightColumn"
 import moveBar from "./moveBar"
 import moveBS from "./moveBS"
 import moveCtrl from "./moveCtrl"
@@ -55,4 +56,5 @@ const actionzz: Action[] = [
     new Action("调整空格键宽度", moveRow5),
     new Action("显示第二层的键", showSecond),
     new Action("添加更多键", setSecondKey),
+    new Action("移除 3 个太远的键", hideRightColumn),
 ]
