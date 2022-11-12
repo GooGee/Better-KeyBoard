@@ -1,6 +1,10 @@
 import { useState } from "react"
+import hideRightColumn from "../Helper/hideRightColumn"
 import loadKeyzz from "../Helper/loadKeyzz"
 import { getAction } from "../Helper/makeActionzz"
+import moveBS from "../Helper/moveBS"
+import moveRightHandKeyzz from "../Helper/moveRightHandKeyzz"
+import showSecond from "../Helper/showSecond"
 import Finger from "../Model/Finger"
 import Key from "../Model/Key"
 import { Width14, Width15, Width16 } from "./App"
@@ -40,9 +44,7 @@ export default function Board(property: Property) {
                 ></Box>
             ))}
 
-            <div
-                style={{ position: "absolute", left: "0", top, width: "100%" }}
-            >
+            <div style={{ position: "absolute", left: "0", top, width: "100%" }}>
                 <button
                     className="rounded-full border-2 border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
                     type="button"
@@ -72,16 +74,16 @@ export default function Board(property: Property) {
                         type="button"
                         onClick={function () {
                             if (action) {
-                                if (action.method.name === "moveRightHandKeyzz") {
+                                if (Object.is(action.method, moveRightHandKeyzz)) {
                                     property.setWidth(Width16)
                                 }
-                                if (action.method.name === "moveBS") {
+                                if (Object.is(action.method, moveBS)) {
                                     property.setWidth(Width15)
                                 }
-                                if (action.method.name === "showSecond") {
+                                if (Object.is(action.method, showSecond)) {
                                     setSecond(true)
                                 }
-                                if (action.method.name === "hideRightColumn") {
+                                if (Object.is(action.method, hideRightColumn)) {
                                     property.setWidth(Width14)
                                 }
                                 setKeyzz(action.method(keyzz))
