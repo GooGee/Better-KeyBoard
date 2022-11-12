@@ -11,6 +11,8 @@ interface Property {
     setWidth(width: number): void
 }
 
+const top = "480px"
+
 const data = loadKeyzz()
 const map = new Map(data.map((item) => [item.text, item]))
 
@@ -39,7 +41,7 @@ export default function Board(property: Property) {
             ))}
 
             <div
-                style={{ position: "absolute", left: "0", top: "477px", width: "100%" }}
+                style={{ position: "absolute", left: "0", top, width: "100%" }}
             >
                 <button
                     className="rounded-full border-2 border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
