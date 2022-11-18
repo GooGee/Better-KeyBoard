@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { BoxWidth } from "../Model/Key"
 import Board from "./Board"
 
-export const Width14 = 933
-export const Width15 = 990
-export const Width16 = 1055
+export const Width14 = 924
+export const Width15 = Width14 + BoxWidth
+export const Width16 = Width15 + BoxWidth
 
 export default function App() {
     const [width, setWidth] = useState(Width15)

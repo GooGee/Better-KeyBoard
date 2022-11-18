@@ -55,20 +55,20 @@ export default function Board(property: Property) {
                     统计
                 </button>
 
-                <button
-                    className="rounded-full border-2 border-red-500 hover:bg-red-500 px-4 py-2 ml-3"
-                    type="button"
-                    onClick={function () {
-                        property.setWidth(Width15)
-                        setKeyzz(data)
-                        setSecond(false)
-                        setStep(0)
-                    }}
-                >
-                    重置
-                </button>
-
-                {action === null ? null : (
+                {action === null ? (
+                    <button
+                        className="rounded-full border-2 border-red-500 hover:bg-red-500 px-4 py-2 ml-3"
+                        type="button"
+                        onClick={function () {
+                            property.setWidth(Width15)
+                            setKeyzz(data)
+                            setSecond(false)
+                            setStep(0)
+                        }}
+                    >
+                        重置
+                    </button>
+                ) : (
                     <button
                         className="rounded-full border-2 border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
                         type="button"

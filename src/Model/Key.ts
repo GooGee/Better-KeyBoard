@@ -1,6 +1,6 @@
 import Finger from "./Finger"
 
-const BoxWidth = 64
+export const BoxWidth = 64
 const BoxPadding = 4
 const BoxMargin = 4
 
