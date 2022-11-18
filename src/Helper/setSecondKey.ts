@@ -31,11 +31,8 @@ const map: Map<string, string> = new Map([
     [KeyEnum.M, "&"],
     [KeyEnum.Comma, "("],
     [KeyEnum.Dot, ")"],
-    [KeyEnum.Slash, "="],
-    [KeyEnum.RShift, ">"],
-    
-    [KeyEnum.RAlt, "]"],
-    [KeyEnum.RWin, "}"],
+    [KeyEnum.Slash, "]"],
+    [KeyEnum.RShift, "}"],
 ])
 
 export default function setSecondKey(keyzz: Key[]) {
