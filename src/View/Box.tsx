@@ -77,7 +77,7 @@ export default function Box(property: Property) {
         >
             <pre
                 className={
-                    "h-12 whitespace-pre-wrap" +
+                    "h-12 whitespace-pre-wrap overflow-hidden" +
                     (property.second
                         ? property.item.gray
                             ? " text-slate-400"

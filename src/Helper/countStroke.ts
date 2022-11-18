@@ -4,8 +4,8 @@ import loadKeyzz from "./loadKeyzz"
 import { runAll } from "./makeActionzz"
 import { makeStrokeStateNew, makeStrokeStateOld, StrokeState } from "./makeStrokeState"
 
-const WordLength = 5 // iff word length great than this, use Tab
-// add an Ctrl for every 33 characters
+const WordLength = 5 // if word length great than this, add a Tab
+// add a Ctrl for every 33 characters
 const AddCtrlAfter = 33 // Esc Ctrl
 const AddDeleteAfter = 88 // Esc Backspace
 const AddArrowAfter = 33 // Backspace Delete ↑ ↓ ← →
