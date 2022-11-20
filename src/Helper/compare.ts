@@ -1,7 +1,7 @@
 import Finger from "../Model/Finger"
 import countStroke, { LeftRightHand } from "./countStroke"
 
-export class Result {
+export class OldNewResult {
     constructor(readonly result0: LeftRightHand, readonly result1: LeftRightHand) {}
 
     get all() {
@@ -49,7 +49,7 @@ export default function compare(text: string) {
     // console.log(result1.left)
     // console.log(result1.right)
 
-    const result = new Result(result0, result1)
+    const result = new OldNewResult(result0, result1)
 
     return result
 }

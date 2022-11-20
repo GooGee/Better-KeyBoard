@@ -1,23 +1,30 @@
 import { useEffect, useState } from "react"
-import compare, { Result } from "../Helper/compare"
+import compare, { OldNewResult } from "../Helper/compare"
 import Finger from "../Model/Finger"
 import ToolTip from "./ToolTip"
 
 export default function ResultModal() {
-    const [result, setResult] = useState<Result>()
+    const [result, setResult] = useState<OldNewResult>()
     const [uri, setUri] = useState("https://googee.github.io/Better-KeyBoard/es2015.ts")
+    const [waiting, setWaiting] = useState(false)
 
     useEffect(() => {
         count()
     }, [])
 
     function count() {
+        if (waiting) {
+            return
+        }
+
+        setWaiting(true)
         fetch(uri)
             .then((response) => response.text())
             .then(function (text) {
                 setResult(compare(text))
             })
             .catch(alert)
+            .then(() => setWaiting(false))
     }
 
     if (result === undefined) {
@@ -223,7 +230,7 @@ export default function ResultModal() {
                             type="button"
                             onClick={count}
                         >
-                            统计
+                            {waiting ? "读取中..." : "统计"}
                         </button>
                     </td>
                 </tr>

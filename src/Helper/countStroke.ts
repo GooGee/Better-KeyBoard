@@ -150,26 +150,16 @@ function addAll(
     }
 
     found.forEach(function (item) {
-        if (item.leftHand) {
-            countHand(item, result.left)
+        const hand = item.leftHand ? result.left : result.right
+        hand.amount += 1
+        hand.far += item.far
+        if (item.finger === Finger.unknown) {
             return
         }
-        countHand(item, result.right)
+        const finger = hand[item.finger]
+        finger.amount += item.amount
+        finger.far += item.far
     })
-}
-
-function countHand(item: StrokeState, hand: Hand) {
-    hand.amount += 1
-    hand.far += item.far
-    if (item.finger === Finger.unknown) {
-        return
-    }
-    add(item, hand[item.finger])
-}
-
-function add(item: StrokeState, finger: StrokeState) {
-    finger.amount += item.amount
-    finger.far += item.far
 }
 
 export class LeftRightHand {
