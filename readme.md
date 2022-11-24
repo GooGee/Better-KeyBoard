@@ -1,9 +1,9 @@
 
 # Better-KeyBoard
 
-减轻小手指负担，提升键入效率，同时降低错误键入机率。
+移除较远的键，减轻小手指负担，提升键入效率，同时降低错误键入机率。
 
-键位变化很少，能够快速适应。[demo](https://googee.github.io/Better-KeyBoard/dist)
+键位变化很少，能够快速适应。[动画演示](https://googee.github.io/Better-KeyBoard/dist)
 
 
 ## 变动：

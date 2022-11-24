@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import hideRightColumn from "../Helper/hideRightColumn"
 import loadKeyzz from "../Helper/loadKeyzz"
 import { getAction } from "../Helper/makeActionzz"
@@ -21,6 +21,8 @@ const data = loadKeyzz()
 const map = new Map(data.map((item) => [item.text, item]))
 
 export default function Board(property: Property) {
+    const move = useRef<HTMLButtonElement>(null)
+    const playing = useRef(true)
     const [finger, setFinger] = useState<Key>()
     const [keyzz, setKeyzz] = useState<Key[]>(data)
     const [second, setSecond] = useState(false)
@@ -28,6 +30,25 @@ export default function Board(property: Property) {
     const [visible, setVisible] = useState(false)
 
     const action = getAction(step)
+
+    useEffect(() => {
+        const ii = setInterval(function () {
+            console.log(move.current?.innerText)
+            if (move.current) {
+                if (playing.current) {
+                    move.current.click()
+                }
+            } else {
+                playing.current = false
+                clear()
+            }
+        }, 1222)
+
+        function clear() {
+            clearInterval(ii)
+        }
+        return clear
+    }, [])
 
     function runAction() {
         if (action === null) {
@@ -93,6 +114,7 @@ export default function Board(property: Property) {
                         className="rounded-full border-2 border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
                         type="button"
                         onClick={runAction}
+                        ref={move}
                     >
                         {action.description}
                     </button>
