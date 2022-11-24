@@ -20,7 +20,7 @@ export default function App() {
                 className="overflow-hidden rounded-xl border border-slate-200 py-5 px-3"
                 style={{
                     width: width + "px",
-                    height: "555px",
+                    height: "566px",
                     marginLeft,
                     backgroundColor: "#e3e3e3",
                     boxShadow: "inset 0 1px 0px #f1f1f1, 0 3px 3px 3px #303038",

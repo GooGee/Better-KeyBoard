@@ -1,3 +1,4 @@
+import Finger from "../Model/Finger"
 import Key from "../Model/Key"
 import KeyEnum from "../Model/KeyEnum"
 
@@ -10,6 +11,7 @@ export default function moveRow5(keyzz: Key[]) {
         if (key.text === KeyEnum.Win) {
             key.x = 1
             key.w = 2
+            key.finger = Finger.thumb
             return key
         }
         if (key.text === KeyEnum.Alt) {
@@ -30,6 +32,7 @@ export default function moveRow5(keyzz: Key[]) {
         if (key.text === KeyEnum.RWin) {
             key.x = 11
             key.w = 2
+            key.finger = Finger.thumb
             return key
         }
         if (key.text === KeyEnum.Menu) {

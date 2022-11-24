@@ -15,7 +15,7 @@ interface Property {
     setWidth(width: number): void
 }
 
-const top = "480px"
+const top = "488px"
 
 const data = loadKeyzz()
 const map = new Map(data.map((item) => [item.text, item]))
@@ -28,6 +28,31 @@ export default function Board(property: Property) {
     const [visible, setVisible] = useState(false)
 
     const action = getAction(step)
+
+    function runAction() {
+        if (action === null) {
+            property.setWidth(Width15)
+            setKeyzz(data)
+            setSecond(false)
+            setStep(0)
+            return
+        }
+
+        if (Object.is(action.method, moveRightHandKeyzz)) {
+            property.setWidth(Width16)
+        }
+        if (Object.is(action.method, moveBS)) {
+            property.setWidth(Width15)
+        }
+        if (Object.is(action.method, showSecond)) {
+            setSecond(true)
+        }
+        if (Object.is(action.method, hideRightColumn)) {
+            property.setWidth(Width14)
+        }
+        setKeyzz(action.method(keyzz))
+        setStep(step + 1)
+    }
 
     return (
         <div className="relative">
@@ -59,12 +84,7 @@ export default function Board(property: Property) {
                     <button
                         className="rounded-full border-2 border-red-500 hover:bg-red-500 px-4 py-2 ml-3"
                         type="button"
-                        onClick={function () {
-                            property.setWidth(Width15)
-                            setKeyzz(data)
-                            setSecond(false)
-                            setStep(0)
-                        }}
+                        onClick={runAction}
                     >
                         重置
                     </button>
@@ -72,24 +92,7 @@ export default function Board(property: Property) {
                     <button
                         className="rounded-full border-2 border-sky-500 hover:bg-sky-500 px-4 py-2 ml-3"
                         type="button"
-                        onClick={function () {
-                            if (action) {
-                                if (Object.is(action.method, moveRightHandKeyzz)) {
-                                    property.setWidth(Width16)
-                                }
-                                if (Object.is(action.method, moveBS)) {
-                                    property.setWidth(Width15)
-                                }
-                                if (Object.is(action.method, showSecond)) {
-                                    setSecond(true)
-                                }
-                                if (Object.is(action.method, hideRightColumn)) {
-                                    property.setWidth(Width14)
-                                }
-                                setKeyzz(action.method(keyzz))
-                                setStep(step + 1)
-                            }
-                        }}
+                        onClick={runAction}
                     >
                         {action.description}
                     </button>
