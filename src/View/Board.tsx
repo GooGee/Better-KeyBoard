@@ -98,7 +98,7 @@ export default function Board(property: Property) {
                         setVisible(true)
                     }}
                 >
-                    统计
+                    效果
                 </button>
 
                 {action === null ? (
