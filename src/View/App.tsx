@@ -2,16 +2,16 @@ import { useState } from "react"
 import { BoxWidth } from "../Model/Key"
 import Board from "./Board"
 
-export const Width14 = 924
-export const Width15 = Width14 + BoxWidth
+export const Width15 = 988
 export const Width16 = Width15 + BoxWidth
+export const Width17 = Width16 + BoxWidth
 
 export default function App() {
     const [width, setWidth] = useState(Width15)
 
     let marginLeft: string | number = 0
-    if (window.innerWidth > Width16) {
-        marginLeft = Math.floor((window.innerWidth - Width16) / 2) + "px"
+    if (window.innerWidth > Width17) {
+        marginLeft = Math.floor((window.innerWidth - Width17) / 2) + "px"
     }
 
     return (

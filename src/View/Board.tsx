@@ -7,7 +7,7 @@ import moveRightHandKeyzz from "../Helper/moveRightHandKeyzz"
 import showSecond from "../Helper/showSecond"
 import Finger from "../Model/Finger"
 import Key from "../Model/Key"
-import { Width14, Width15, Width16 } from "./App"
+import { Width15, Width16, Width17 } from "./App"
 import Box from "./Box"
 import ResultModal from "./ResultModal"
 
@@ -60,16 +60,16 @@ export default function Board(property: Property) {
         }
 
         if (Object.is(action.method, moveRightHandKeyzz)) {
-            property.setWidth(Width16)
+            property.setWidth(Width17)
         }
         if (Object.is(action.method, moveBS)) {
-            property.setWidth(Width15)
+            property.setWidth(Width16)
         }
         if (Object.is(action.method, showSecond)) {
             setSecond(true)
         }
         if (Object.is(action.method, hideRightColumn)) {
-            property.setWidth(Width14)
+            property.setWidth(Width15)
         }
         setKeyzz(action.method(keyzz))
         setStep(step + 1)

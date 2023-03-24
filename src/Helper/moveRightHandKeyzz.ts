@@ -11,7 +11,7 @@ export default function moveRightHandKeyzz(keyzz: Key[]) {
         }
         if (item.leftHand === false) {
             const key = item.clone()
-            key.x += 2
+            key.x += 3
             return key
         }
         return item

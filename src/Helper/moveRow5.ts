@@ -21,22 +21,22 @@ export default function moveRow5(keyzz: Key[]) {
         }
         if (key.text === KeyEnum.Space) {
             key.x = 5
-            key.w = 4
+            key.w = 5
             return key
         }
         if (key.text === KeyEnum.RAlt) {
-            key.x = 9
+            key.x = 10
             key.w = 2
             return key
         }
         if (key.text === KeyEnum.RWin) {
-            key.x = 11
+            key.x = 12
             key.w = 2
             key.finger = Finger.thumb
             return key
         }
         if (key.text === KeyEnum.Menu) {
-            key.x = 13
+            key.x = 14
             key.w = 1
             return key
         }

@@ -43,7 +43,7 @@ export function runAll(keyzz: Key[]) {
 
 const actionzz: Action[] = [
     new Action("设置键宽度为 1", setKeyWidth),
-    new Action("将右手负责的键向右移动 2", moveRightHandKeyzz),
+    new Action("将右手负责的键向右移动 3", moveRightHandKeyzz),
     new Action("移动 Esc 键", moveEsc),
     new Action("移动第 1 行的键", moveRow0),
     new Action("移动 Enter 键", moveEnter),
